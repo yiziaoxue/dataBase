@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plateno.booking.mapper.GsOrderInnActivityMapper">
+
+	<insert id="addEntity">
+		insert into gs_order_inn_activity(member_id,activity_code,count,create_time,create_oprt,update_time,update_oprt) values(#{memberId},#{activityCode},#{count},#{createTime},#{createOprt},#{updateTime},#{updateOprt})
+	</insert>
+
+	<delete id="deleteEntity">
+		delete from gs_order_inn_activity where member_id = #{memberId}
+	</delete>
+
+	<update id="updateEntity">
+		update gs_order_inn_activity
+		<set>
+			<if test="memberId != null">
+				member_id = #{memberId},
+			</if>
+			<if test="activityCode != null">
+				activity_code = #{activityCode},
+			</if>
+			<if test="count != null">
+				count = #{count},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime},
+			</if>
+			<if test="createOprt != null">
+				create_oprt = #{createOprt},
+			</if>
+			<if test="updateTime != null">
+				update_time = #{updateTime},
+			</if>
+			<if test="updateOprt != null">
+				update_oprt = #{updateOprt},
+			</if>
+		</set>
+		where member_id = #{memberId}
+	</update>
+
+	<select id="findEntity" resultType="com.plateno.booking.model.GsOrderInnActivity">
+		select
+		member_id AS memberId,
+		activity_code AS activityCode,
+		count AS count,
+		create_time AS createTime,
+		create_oprt AS createOprt,
+		update_time AS updateTime,
+		update_oprt AS updateOprt
+		from gs_order_inn_activity
+		where 1 = 1
+		<if test="memberId != null">
+			and member_id = #{memberId}
+		</if>
+		<if test="activityCode != null">
+			and activity_code = #{activityCode}
+		</if>
+		<if test="count != null">
+			and count = #{count}
+		</if>
+		<if test="createTime != null">
+			and create_time = #{createTime}
+		</if>
+		<if test="createOprt != null">
+			and create_oprt = #{createOprt}
+		</if>
+		<if test="updateTime != null">
+			and update_time = #{updateTime}
+		</if>
+		<if test="updateOprt != null">
+			and update_oprt = #{updateOprt}
+		</if>
+	</select>
+
+	<select id="findEntityList" resultType="com.plateno.booking.model.GsOrderInnActivity">
+		select
+		member_id AS memberId,
+		activity_code AS activityCode,
+		count AS count,
+		create_time AS createTime,
+		create_oprt AS createOprt,
+		update_time AS updateTime,
+		update_oprt AS updateOprt
+		from gs_order_inn_activity
+		where 1 = 1
+		<if test="memberId != null">
+			and member_id = #{memberId}
+		</if>
+		<if test="activityCode != null">
+			and activity_code = #{activityCode}
+		</if>
+		<if test="count != null">
+			and count = #{count}
+		</if>
+		<if test="createTime != null">
+			and create_time = #{createTime}
+		</if>
+		<if test="createOprt != null">
+			and create_oprt = #{createOprt}
+		</if>
+		<if test="updateTime != null">
+			and update_time = #{updateTime}
+		</if>
+		<if test="updateOprt != null">
+			and update_oprt = #{updateOprt}
+		</if>
+	</select>
+
+
+</mapper>

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plateno.booking.mapper.GsOrderInnDayMapper">
+
+	<insert id="addEntity">
+		insert into gs_order_inn_day(order_code,member_id,room_day,room_rate,room_member_rate,create_time,create_oprt,update_time,update_oprt,room_activity_rate,activity_code,activity_item,tran_type,back_cash,market_id,return_point,meb_type,spot_return_point,currency,store_return_point) values(#{orderCode},#{memberId},#{roomDay},#{roomRate},#{roomMemberRate},#{createTime},#{createOprt},#{updateTime},#{updateOprt},#{roomActivityRate},#{activityCode},#{activityItem},#{tranType},#{backCash},#{marketId},#{returnPoint},#{mebType},#{spotReturnPoint},#{currency},#{storeReturnPoint})
+	</insert>
+
+	<delete id="deleteEntity">
+		delete from gs_order_inn_day where market_id = #{marketId}
+	</delete>
+
+	<update id="updateEntity">
+		update gs_order_inn_day
+		<set>
+			<if test="orderCode != null">
+				order_code = #{orderCode},
+			</if>
+			<if test="memberId != null">
+				member_id = #{memberId},
+			</if>
+			<if test="roomDay != null">
+				room_day = #{roomDay},
+			</if>
+			<if test="roomRate != null">
+				room_rate = #{roomRate},
+			</if>
+			<if test="roomMemberRate != null">
+				room_member_rate = #{roomMemberRate},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime},
+			</if>
+			<if test="createOprt != null">
+				create_oprt = #{createOprt},
+			</if>
+			<if test="updateTime != null">
+				update_time = #{updateTime},
+			</if>
+			<if test="updateOprt != null">
+				update_oprt = #{updateOprt},
+			</if>
+			<if test="roomActivityRate != null">
+				room_activity_rate = #{roomActivityRate},
+			</if>
+			<if test="activityCode != null">
+				activity_code = #{activityCode},
+			</if>
+			<if test="activityItem != null">
+				activity_item = #{activityItem},
+			</if>
+			<if test="tranType != null">
+				tran_type = #{tranType},
+			</if>
+			<if test="backCash != null">
+				back_cash = #{backCash},
+			</if>
+			<if test="marketId != null">
+				market_id = #{marketId},
+			</if>
+			<if test="returnPoint != null">
+				return_point = #{returnPoint},
+			</if>
+			<if test="mebType != null">
+				meb_type = #{mebType},
+			</if>
+			<if test="spotReturnPoint != null">
+				spot_return_point = #{spotReturnPoint},
+			</if>
+			<if test="currency != null">
+				currency = #{currency},
+			</if>
+			<if test="storeReturnPoint != null">
+				store_return_point = #{storeReturnPoint},
+			</if>
+		</set>
+		where market_id = #{marketId}
+	</update>
+
+	<select id="findEntity" resultType="com.plateno.booking.model.GsOrderInnDay">
+		select
+		order_code AS orderCode,
+		member_id AS memberId,
+		room_day AS roomDay,
+		room_rate AS roomRate,
+		room_member_rate AS roomMemberRate,
+		create_time AS createTime,
+		create_oprt AS createOprt,
+		update_time AS updateTime,
+		update_oprt AS updateOprt,
+		room_activity_rate AS roomActivityRate,
+		activity_code AS activityCode,
+		activity_item AS activityItem,
+		tran_type AS tranType,
+		back_cash AS backCash,
+		market_id AS marketId,
+		return_point AS returnPoint,
+		meb_type AS mebType,
+		spot_return_point AS spotReturnPoint,
+		currency AS currency,
+		store_return_point AS storeReturnPoint
+		from gs_order_inn_day
+		where 1 = 1
+		<if test="orderCode != null">
+			and order_code = #{orderCode}
+		</if>
+		<if test="memberId != null">
+			and member_id = #{memberId}
+		</if>
+		<if test="roomDay != null">
+			and room_day = #{roomDay}
+		</if>
+		<if test="roomRate != null">
+			and room_rate = #{roomRate}
+		</if>
+		<if test="roomMemberRate != null">
+			and room_member_rate = #{roomMemberRate}
+		</if>
+		<if test="createTime != null">
+			and create_time = #{createTime}
+		</if>
+		<if test="createOprt != null">
+			and create_oprt = #{createOprt}
+		</if>
+		<if test="updateTime != null">
+			and update_time = #{updateTime}
+		</if>
+		<if test="updateOprt != null">
+			and update_oprt = #{updateOprt}
+		</if>
+		<if test="roomActivityRate != null">
+			and room_activity_rate = #{roomActivityRate}
+		</if>
+		<if test="activityCode != null">
+			and activity_code = #{activityCode}
+		</if>
+		<if test="activityItem != null">
+			and activity_item = #{activityItem}
+		</if>
+		<if test="tranType != null">
+			and tran_type = #{tranType}
+		</if>
+		<if test="backCash != null">
+			and back_cash = #{backCash}
+		</if>
+		<if test="marketId != null">
+			and market_id = #{marketId}
+		</if>
+		<if test="returnPoint != null">
+			and return_point = #{returnPoint}
+		</if>
+		<if test="mebType != null">
+			and meb_type = #{mebType}
+		</if>
+		<if test="spotReturnPoint != null">
+			and spot_return_point = #{spotReturnPoint}
+		</if>
+		<if test="currency != null">
+			and currency = #{currency}
+		</if>
+		<if test="storeReturnPoint != null">
+			and store_return_point = #{storeReturnPoint}
+		</if>
+	</select>
+
+	<select id="findEntityList" resultType="com.plateno.booking.model.GsOrderInnDay">
+		select
+		order_code AS orderCode,
+		member_id AS memberId,
+		room_day AS roomDay,
+		room_rate AS roomRate,
+		room_member_rate AS roomMemberRate,
+		create_time AS createTime,
+		create_oprt AS createOprt,
+		update_time AS updateTime,
+		update_oprt AS updateOprt,
+		room_activity_rate AS roomActivityRate,
+		activity_code AS activityCode,
+		activity_item AS activityItem,
+		tran_type AS tranType,
+		back_cash AS backCash,
+		market_id AS marketId,
+		return_point AS returnPoint,
+		meb_type AS mebType,
+		spot_return_point AS spotReturnPoint,
+		currency AS currency,
+		store_return_point AS storeReturnPoint
+		from gs_order_inn_day
+		where 1 = 1
+		<if test="orderCode != null">
+			and order_code = #{orderCode}
+		</if>
+		<if test="memberId != null">
+			and member_id = #{memberId}
+		</if>
+		<if test="roomDay != null">
+			and room_day = #{roomDay}
+		</if>
+		<if test="roomRate != null">
+			and room_rate = #{roomRate}
+		</if>
+		<if test="roomMemberRate != null">
+			and room_member_rate = #{roomMemberRate}
+		</if>
+		<if test="createTime != null">
+			and create_time = #{createTime}
+		</if>
+		<if test="createOprt != null">
+			and create_oprt = #{createOprt}
+		</if>
+		<if test="updateTime != null">
+			and update_time = #{updateTime}
+		</if>
+		<if test="updateOprt != null">
+			and update_oprt = #{updateOprt}
+		</if>
+		<if test="roomActivityRate != null">
+			and room_activity_rate = #{roomActivityRate}
+		</if>
+		<if test="activityCode != null">
+			and activity_code = #{activityCode}
+		</if>
+		<if test="activityItem != null">
+			and activity_item = #{activityItem}
+		</if>
+		<if test="tranType != null">
+			and tran_type = #{tranType}
+		</if>
+		<if test="backCash != null">
+			and back_cash = #{backCash}
+		</if>
+		<if test="marketId != null">
+			and market_id = #{marketId}
+		</if>
+		<if test="returnPoint != null">
+			and return_point = #{returnPoint}
+		</if>
+		<if test="mebType != null">
+			and meb_type = #{mebType}
+		</if>
+		<if test="spotReturnPoint != null">
+			and spot_return_point = #{spotReturnPoint}
+		</if>
+		<if test="currency != null">
+			and currency = #{currency}
+		</if>
+		<if test="storeReturnPoint != null">
+			and store_return_point = #{storeReturnPoint}
+		</if>
+	</select>
+
+
+</mapper>

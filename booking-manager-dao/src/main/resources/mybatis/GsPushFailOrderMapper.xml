@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plateno.booking.mapper.GsPushFailOrderMapper">
+
+	<insert id="addEntity">
+		insert into gs_push_fail_order(record_key,content_json,state,execCount,push_type,create_time,update_time,member_id,error_msg,order_state) values(#{recordKey},#{contentJson},#{state},#{execcount},#{pushType},#{createTime},#{updateTime},#{memberId},#{errorMsg},#{orderState})
+	</insert>
+
+	<delete id="deleteEntity">
+		delete from gs_push_fail_order where member_id = #{memberId}
+	</delete>
+
+	<update id="updateEntity">
+		update gs_push_fail_order
+		<set>
+			<if test="recordKey != null">
+				record_key = #{recordKey},
+			</if>
+			<if test="contentJson != null">
+				content_json = #{contentJson},
+			</if>
+			<if test="state != null">
+				state = #{state},
+			</if>
+			<if test="execcount != null">
+				execCount = #{execcount},
+			</if>
+			<if test="pushType != null">
+				push_type = #{pushType},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime},
+			</if>
+			<if test="updateTime != null">
+				update_time = #{updateTime},
+			</if>
+			<if test="memberId != null">
+				member_id = #{memberId},
+			</if>
+			<if test="errorMsg != null">
+				error_msg = #{errorMsg},
+			</if>
+			<if test="orderState != null">
+				order_state = #{orderState},
+			</if>
+		</set>
+		where member_id = #{memberId}
+	</update>
+
+	<select id="findEntity" resultType="com.plateno.booking.model.GsPushFailOrder">
+		select
+		record_key AS recordKey,
+		content_json AS contentJson,
+		state AS state,
+		execCount AS execcount,
+		push_type AS pushType,
+		create_time AS createTime,
+		update_time AS updateTime,
+		member_id AS memberId,
+		error_msg AS errorMsg,
+		order_state AS orderState
+		from gs_push_fail_order
+		where 1 = 1
+		<if test="recordKey != null">
+			and record_key = #{recordKey}
+		</if>
+		<if test="contentJson != null">
+			and content_json = #{contentJson}
+		</if>
+		<if test="state != null">
+			and state = #{state}
+		</if>
+		<if test="execcount != null">
+			and execCount = #{execcount}
+		</if>
+		<if test="pushType != null">
+			and push_type = #{pushType}
+		</if>
+		<if test="createTime != null">
+			and create_time = #{createTime}
+		</if>
+		<if test="updateTime != null">
+			and update_time = #{updateTime}
+		</if>
+		<if test="memberId != null">
+			and member_id = #{memberId}
+		</if>
+		<if test="errorMsg != null">
+			and error_msg = #{errorMsg}
+		</if>
+		<if test="orderState != null">
+			and order_state = #{orderState}
+		</if>
+	</select>
+
+	<select id="findEntityList" resultType="com.plateno.booking.model.GsPushFailOrder">
+		select
+		record_key AS recordKey,
+		content_json AS contentJson,
+		state AS state,
+		execCount AS execcount,
+		push_type AS pushType,
+		create_time AS createTime,
+		update_time AS updateTime,
+		member_id AS memberId,
+		error_msg AS errorMsg,
+		order_state AS orderState
+		from gs_push_fail_order
+		where 1 = 1
+		<if test="recordKey != null">
+			and record_key = #{recordKey}
+		</if>
+		<if test="contentJson != null">
+			and content_json = #{contentJson}
+		</if>
+		<if test="state != null">
+			and state = #{state}
+		</if>
+		<if test="execcount != null">
+			and execCount = #{execcount}
+		</if>
+		<if test="pushType != null">
+			and push_type = #{pushType}
+		</if>
+		<if test="createTime != null">
+			and create_time = #{createTime}
+		</if>
+		<if test="updateTime != null">
+			and update_time = #{updateTime}
+		</if>
+		<if test="memberId != null">
+			and member_id = #{memberId}
+		</if>
+		<if test="errorMsg != null">
+			and error_msg = #{errorMsg}
+		</if>
+		<if test="orderState != null">
+			and order_state = #{orderState}
+		</if>
+	</select>
+
+
+</mapper>

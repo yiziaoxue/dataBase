@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plateno.booking.mapper.GsOrderInnGuestMapper">
+
+	<insert id="addEntity">
+		insert into gs_order_inn_guest(order_code,name,sex,doct_type,doct_no,mobile,telephone,remark,last_name,first_name,country_code,age,is_adult,email) values(#{orderCode},#{name},#{sex},#{doctType},#{doctNo},#{mobile},#{telephone},#{remark},#{lastName},#{firstName},#{countryCode},#{age},#{isAdult},#{email})
+	</insert>
+
+	<delete id="deleteEntity">
+		delete from gs_order_inn_guest	</delete>
+
+	<update id="updateEntity">
+		update gs_order_inn_guest
+		<set>
+			<if test="orderCode != null">
+				order_code = #{orderCode},
+			</if>
+			<if test="name != null">
+				name = #{name},
+			</if>
+			<if test="sex != null">
+				sex = #{sex},
+			</if>
+			<if test="doctType != null">
+				doct_type = #{doctType},
+			</if>
+			<if test="doctNo != null">
+				doct_no = #{doctNo},
+			</if>
+			<if test="mobile != null">
+				mobile = #{mobile},
+			</if>
+			<if test="telephone != null">
+				telephone = #{telephone},
+			</if>
+			<if test="remark != null">
+				remark = #{remark},
+			</if>
+			<if test="lastName != null">
+				last_name = #{lastName},
+			</if>
+			<if test="firstName != null">
+				first_name = #{firstName},
+			</if>
+			<if test="countryCode != null">
+				country_code = #{countryCode},
+			</if>
+			<if test="age != null">
+				age = #{age},
+			</if>
+			<if test="isAdult != null">
+				is_adult = #{isAdult},
+			</if>
+			<if test="email != null">
+				email = #{email},
+			</if>
+		</set>
+	</update>
+
+	<select id="findEntity" resultType="com.plateno.booking.model.GsOrderInnGuest">
+		select
+		order_code AS orderCode,
+		name AS name,
+		sex AS sex,
+		doct_type AS doctType,
+		doct_no AS doctNo,
+		mobile AS mobile,
+		telephone AS telephone,
+		remark AS remark,
+		last_name AS lastName,
+		first_name AS firstName,
+		country_code AS countryCode,
+		age AS age,
+		is_adult AS isAdult,
+		email AS email
+		from gs_order_inn_guest
+		where 1 = 1
+		<if test="orderCode != null">
+			and order_code = #{orderCode}
+		</if>
+		<if test="name != null">
+			and name = #{name}
+		</if>
+		<if test="sex != null">
+			and sex = #{sex}
+		</if>
+		<if test="doctType != null">
+			and doct_type = #{doctType}
+		</if>
+		<if test="doctNo != null">
+			and doct_no = #{doctNo}
+		</if>
+		<if test="mobile != null">
+			and mobile = #{mobile}
+		</if>
+		<if test="telephone != null">
+			and telephone = #{telephone}
+		</if>
+		<if test="remark != null">
+			and remark = #{remark}
+		</if>
+		<if test="lastName != null">
+			and last_name = #{lastName}
+		</if>
+		<if test="firstName != null">
+			and first_name = #{firstName}
+		</if>
+		<if test="countryCode != null">
+			and country_code = #{countryCode}
+		</if>
+		<if test="age != null">
+			and age = #{age}
+		</if>
+		<if test="isAdult != null">
+			and is_adult = #{isAdult}
+		</if>
+		<if test="email != null">
+			and email = #{email}
+		</if>
+	</select>
+
+	<select id="findEntityList" resultType="com.plateno.booking.model.GsOrderInnGuest">
+		select
+		order_code AS orderCode,
+		name AS name,
+		sex AS sex,
+		doct_type AS doctType,
+		doct_no AS doctNo,
+		mobile AS mobile,
+		telephone AS telephone,
+		remark AS remark,
+		last_name AS lastName,
+		first_name AS firstName,
+		country_code AS countryCode,
+		age AS age,
+		is_adult AS isAdult,
+		email AS email
+		from gs_order_inn_guest
+		where 1 = 1
+		<if test="orderCode != null">
+			and order_code = #{orderCode}
+		</if>
+		<if test="name != null">
+			and name = #{name}
+		</if>
+		<if test="sex != null">
+			and sex = #{sex}
+		</if>
+		<if test="doctType != null">
+			and doct_type = #{doctType}
+		</if>
+		<if test="doctNo != null">
+			and doct_no = #{doctNo}
+		</if>
+		<if test="mobile != null">
+			and mobile = #{mobile}
+		</if>
+		<if test="telephone != null">
+			and telephone = #{telephone}
+		</if>
+		<if test="remark != null">
+			and remark = #{remark}
+		</if>
+		<if test="lastName != null">
+			and last_name = #{lastName}
+		</if>
+		<if test="firstName != null">
+			and first_name = #{firstName}
+		</if>
+		<if test="countryCode != null">
+			and country_code = #{countryCode}
+		</if>
+		<if test="age != null">
+			and age = #{age}
+		</if>
+		<if test="isAdult != null">
+			and is_adult = #{isAdult}
+		</if>
+		<if test="email != null">
+			and email = #{email}
+		</if>
+	</select>
+
+
+</mapper>

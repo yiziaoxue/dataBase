@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plateno.booking.mapper.GsOrderBackpayLogMapper">
+
+	<insert id="addEntity">
+		insert into gs_order_backpay_log(order_code,folio_id,chain_id,folio_state,total_day,use_day,orig_pay_amount,need_pay_amount,pms_return_amount,real_return_amount,arr_date,dep_date,pay_channel,remark,flag,create_time) values(#{orderCode},#{folioId},#{chainId},#{folioState},#{totalDay},#{useDay},#{origPayAmount},#{needPayAmount},#{pmsReturnAmount},#{realReturnAmount},#{arrDate},#{depDate},#{payChannel},#{remark},#{flag},#{createTime})
+	</insert>
+
+	<delete id="deleteEntity">
+		delete from gs_order_backpay_log where chain_id = #{chainId}
+	</delete>
+
+	<update id="updateEntity">
+		update gs_order_backpay_log
+		<set>
+			<if test="orderCode != null">
+				order_code = #{orderCode},
+			</if>
+			<if test="folioId != null">
+				folio_id = #{folioId},
+			</if>
+			<if test="chainId != null">
+				chain_id = #{chainId},
+			</if>
+			<if test="folioState != null">
+				folio_state = #{folioState},
+			</if>
+			<if test="totalDay != null">
+				total_day = #{totalDay},
+			</if>
+			<if test="useDay != null">
+				use_day = #{useDay},
+			</if>
+			<if test="origPayAmount != null">
+				orig_pay_amount = #{origPayAmount},
+			</if>
+			<if test="needPayAmount != null">
+				need_pay_amount = #{needPayAmount},
+			</if>
+			<if test="pmsReturnAmount != null">
+				pms_return_amount = #{pmsReturnAmount},
+			</if>
+			<if test="realReturnAmount != null">
+				real_return_amount = #{realReturnAmount},
+			</if>
+			<if test="arrDate != null">
+				arr_date = #{arrDate},
+			</if>
+			<if test="depDate != null">
+				dep_date = #{depDate},
+			</if>
+			<if test="payChannel != null">
+				pay_channel = #{payChannel},
+			</if>
+			<if test="remark != null">
+				remark = #{remark},
+			</if>
+			<if test="flag != null">
+				flag = #{flag},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime},
+			</if>
+		</set>
+		where chain_id = #{chainId}
+	</update>
+
+	<select id="findEntity" resultType="com.plateno.booking.model.GsOrderBackpayLog">
+		select
+		order_code AS orderCode,
+		folio_id AS folioId,
+		chain_id AS chainId,
+		folio_state AS folioState,
+		total_day AS totalDay,
+		use_day AS useDay,
+		orig_pay_amount AS origPayAmount,
+		need_pay_amount AS needPayAmount,
+		pms_return_amount AS pmsReturnAmount,
+		real_return_amount AS realReturnAmount,
+		arr_date AS arrDate,
+		dep_date AS depDate,
+		pay_channel AS payChannel,
+		remark AS remark,
+		flag AS flag,
+		create_time AS createTime
+		from gs_order_backpay_log
+		where 1 = 1
+		<if test="orderCode != null">
+			and order_code = #{orderCode}
+		</if>
+		<if test="folioId != null">
+			and folio_id = #{folioId}
+		</if>
+		<if test="chainId != null">
+			and chain_id = #{chainId}
+		</if>
+		<if test="folioState != null">
+			and folio_state = #{folioState}
+		</if>
+		<if test="totalDay != null">
+			and total_day = #{totalDay}
+		</if>
+		<if test="useDay != null">
+			and use_day = #{useDay}
+		</if>
+		<if test="origPayAmount != null">
+			and orig_pay_amount = #{origPayAmount}
+		</if>
+		<if test="needPayAmount != null">
+			and need_pay_amount = #{needPayAmount}
+		</if>
+		<if test="pmsReturnAmount != null">
+			and pms_return_amount = #{pmsReturnAmount}
+		</if>
+		<if test="realReturnAmount != null">
+			and real_return_amount = #{realReturnAmount}
+		</if>
+		<if test="arrDate != null">
+			and arr_date = #{arrDate}
+		</if>
+		<if test="depDate != null">
+			and dep_date = #{depDate}
+		</if>
+		<if test="payChannel != null">
+			and pay_channel = #{payChannel}
+		</if>
+		<if test="remark != null">
+			and remark = #{remark}
+		</if>
+		<if test="flag != null">
+			and flag = #{flag}
+		</if>
+		<if test="createTime != null">
+			and create_time = #{createTime}
+		</if>
+	</select>
+
+	<select id="findEntityList" resultType="com.plateno.booking.model.GsOrderBackpayLog">
+		select
+		order_code AS orderCode,
+		folio_id AS folioId,
+		chain_id AS chainId,
+		folio_state AS folioState,
+		total_day AS totalDay,
+		use_day AS useDay,
+		orig_pay_amount AS origPayAmount,
+		need_pay_amount AS needPayAmount,
+		pms_return_amount AS pmsReturnAmount,
+		real_return_amount AS realReturnAmount,
+		arr_date AS arrDate,
+		dep_date AS depDate,
+		pay_channel AS payChannel,
+		remark AS remark,
+		flag AS flag,
+		create_time AS createTime
+		from gs_order_backpay_log
+		where 1 = 1
+		<if test="orderCode != null">
+			and order_code = #{orderCode}
+		</if>
+		<if test="folioId != null">
+			and folio_id = #{folioId}
+		</if>
+		<if test="chainId != null">
+			and chain_id = #{chainId}
+		</if>
+		<if test="folioState != null">
+			and folio_state = #{folioState}
+		</if>
+		<if test="totalDay != null">
+			and total_day = #{totalDay}
+		</if>
+		<if test="useDay != null">
+			and use_day = #{useDay}
+		</if>
+		<if test="origPayAmount != null">
+			and orig_pay_amount = #{origPayAmount}
+		</if>
+		<if test="needPayAmount != null">
+			and need_pay_amount = #{needPayAmount}
+		</if>
+		<if test="pmsReturnAmount != null">
+			and pms_return_amount = #{pmsReturnAmount}
+		</if>
+		<if test="realReturnAmount != null">
+			and real_return_amount = #{realReturnAmount}
+		</if>
+		<if test="arrDate != null">
+			and arr_date = #{arrDate}
+		</if>
+		<if test="depDate != null">
+			and dep_date = #{depDate}
+		</if>
+		<if test="payChannel != null">
+			and pay_channel = #{payChannel}
+		</if>
+		<if test="remark != null">
+			and remark = #{remark}
+		</if>
+		<if test="flag != null">
+			and flag = #{flag}
+		</if>
+		<if test="createTime != null">
+			and create_time = #{createTime}
+		</if>
+	</select>
+
+
+</mapper>

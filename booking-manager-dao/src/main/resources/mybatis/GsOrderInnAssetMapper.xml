@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plateno.booking.mapper.GsOrderInnAssetMapper">
+
+	<insert id="addEntity">
+		insert into gs_order_inn_asset(account_code,order_code,offset_prices,item_id,item_name,count,remark,is_cancel_return,is_prepare,flag,ext,create_time,create_oprt,update_time,update_oprt,ext2,merchantNo,ext3) values(#{accountCode},#{orderCode},#{offsetPrices},#{itemId},#{itemName},#{count},#{remark},#{isCancelReturn},#{isPrepare},#{flag},#{ext},#{createTime},#{createOprt},#{updateTime},#{updateOprt},#{ext2},#{merchantno},#{ext3})
+	</insert>
+
+	<delete id="deleteEntity">
+		delete from gs_order_inn_asset where item_id = #{itemId}
+	</delete>
+
+	<update id="updateEntity">
+		update gs_order_inn_asset
+		<set>
+			<if test="accountCode != null">
+				account_code = #{accountCode},
+			</if>
+			<if test="orderCode != null">
+				order_code = #{orderCode},
+			</if>
+			<if test="offsetPrices != null">
+				offset_prices = #{offsetPrices},
+			</if>
+			<if test="itemId != null">
+				item_id = #{itemId},
+			</if>
+			<if test="itemName != null">
+				item_name = #{itemName},
+			</if>
+			<if test="count != null">
+				count = #{count},
+			</if>
+			<if test="remark != null">
+				remark = #{remark},
+			</if>
+			<if test="isCancelReturn != null">
+				is_cancel_return = #{isCancelReturn},
+			</if>
+			<if test="isPrepare != null">
+				is_prepare = #{isPrepare},
+			</if>
+			<if test="flag != null">
+				flag = #{flag},
+			</if>
+			<if test="ext != null">
+				ext = #{ext},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime},
+			</if>
+			<if test="createOprt != null">
+				create_oprt = #{createOprt},
+			</if>
+			<if test="updateTime != null">
+				update_time = #{updateTime},
+			</if>
+			<if test="updateOprt != null">
+				update_oprt = #{updateOprt},
+			</if>
+			<if test="ext2 != null">
+				ext2 = #{ext2},
+			</if>
+			<if test="merchantno != null">
+				merchantNo = #{merchantno},
+			</if>
+			<if test="ext3 != null">
+				ext3 = #{ext3},
+			</if>
+		</set>
+		where item_id = #{itemId}
+	</update>
+
+	<select id="findEntity" resultType="com.plateno.booking.model.GsOrderInnAsset">
+		select
+		account_code AS accountCode,
+		order_code AS orderCode,
+		offset_prices AS offsetPrices,
+		item_id AS itemId,
+		item_name AS itemName,
+		count AS count,
+		remark AS remark,
+		is_cancel_return AS isCancelReturn,
+		is_prepare AS isPrepare,
+		flag AS flag,
+		ext AS ext,
+		create_time AS createTime,
+		create_oprt AS createOprt,
+		update_time AS updateTime,
+		update_oprt AS updateOprt,
+		ext2 AS ext2,
+		merchantNo AS merchantno,
+		ext3 AS ext3
+		from gs_order_inn_asset
+		where 1 = 1
+		<if test="accountCode != null">
+			and account_code = #{accountCode}
+		</if>
+		<if test="orderCode != null">
+			and order_code = #{orderCode}
+		</if>
+		<if test="offsetPrices != null">
+			and offset_prices = #{offsetPrices}
+		</if>
+		<if test="itemId != null">
+			and item_id = #{itemId}
+		</if>
+		<if test="itemName != null">
+			and item_name = #{itemName}
+		</if>
+		<if test="count != null">
+			and count = #{count}
+		</if>
+		<if test="remark != null">
+			and remark = #{remark}
+		</if>
+		<if test="isCancelReturn != null">
+			and is_cancel_return = #{isCancelReturn}
+		</if>
+		<if test="isPrepare != null">
+			and is_prepare = #{isPrepare}
+		</if>
+		<if test="flag != null">
+			and flag = #{flag}
+		</if>
+		<if test="ext != null">
+			and ext = #{ext}
+		</if>
+		<if test="createTime != null">
+			and create_time = #{createTime}
+		</if>
+		<if test="createOprt != null">
+			and create_oprt = #{createOprt}
+		</if>
+		<if test="updateTime != null">
+			and update_time = #{updateTime}
+		</if>
+		<if test="updateOprt != null">
+			and update_oprt = #{updateOprt}
+		</if>
+		<if test="ext2 != null">
+			and ext2 = #{ext2}
+		</if>
+		<if test="merchantno != null">
+			and merchantNo = #{merchantno}
+		</if>
+		<if test="ext3 != null">
+			and ext3 = #{ext3}
+		</if>
+	</select>
+
+	<select id="findEntityList" resultType="com.plateno.booking.model.GsOrderInnAsset">
+		select
+		account_code AS accountCode,
+		order_code AS orderCode,
+		offset_prices AS offsetPrices,
+		item_id AS itemId,
+		item_name AS itemName,
+		count AS count,
+		remark AS remark,
+		is_cancel_return AS isCancelReturn,
+		is_prepare AS isPrepare,
+		flag AS flag,
+		ext AS ext,
+		create_time AS createTime,
+		create_oprt AS createOprt,
+		update_time AS updateTime,
+		update_oprt AS updateOprt,
+		ext2 AS ext2,
+		merchantNo AS merchantno,
+		ext3 AS ext3
+		from gs_order_inn_asset
+		where 1 = 1
+		<if test="accountCode != null">
+			and account_code = #{accountCode}
+		</if>
+		<if test="orderCode != null">
+			and order_code = #{orderCode}
+		</if>
+		<if test="offsetPrices != null">
+			and offset_prices = #{offsetPrices}
+		</if>
+		<if test="itemId != null">
+			and item_id = #{itemId}
+		</if>
+		<if test="itemName != null">
+			and item_name = #{itemName}
+		</if>
+		<if test="count != null">
+			and count = #{count}
+		</if>
+		<if test="remark != null">
+			and remark = #{remark}
+		</if>
+		<if test="isCancelReturn != null">
+			and is_cancel_return = #{isCancelReturn}
+		</if>
+		<if test="isPrepare != null">
+			and is_prepare = #{isPrepare}
+		</if>
+		<if test="flag != null">
+			and flag = #{flag}
+		</if>
+		<if test="ext != null">
+			and ext = #{ext}
+		</if>
+		<if test="createTime != null">
+			and create_time = #{createTime}
+		</if>
+		<if test="createOprt != null">
+			and create_oprt = #{createOprt}
+		</if>
+		<if test="updateTime != null">
+			and update_time = #{updateTime}
+		</if>
+		<if test="updateOprt != null">
+			and update_oprt = #{updateOprt}
+		</if>
+		<if test="ext2 != null">
+			and ext2 = #{ext2}
+		</if>
+		<if test="merchantno != null">
+			and merchantNo = #{merchantno}
+		</if>
+		<if test="ext3 != null">
+			and ext3 = #{ext3}
+		</if>
+	</select>
+
+
+</mapper>

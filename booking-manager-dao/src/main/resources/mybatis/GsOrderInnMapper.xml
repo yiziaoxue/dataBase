@@ -1,0 +1,901 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plateno.booking.mapper.GsOrderInnMapper">
+
+	<insert id="addEntity">
+		insert into gs_order_inn(order_code,third_order_code,inn_id,inn_name,chain_id,room_type_id,room_type_name,third_roomtype_id,bk_meb_id,bk_name,bk_mobile,bk_email,bk_meb_type,bk_card_no,bk_property_id,bk_protype_id,contact_name,contact_phone,contact_email,guests_name,guests_num,bk_ip,supplier_id,assure_type,assure_meb_point,source_type,inner_remarks,remarks,order_state,activity_code,seller_id,pay_state,can_cancel,need_invoice,pay_type,orig_rate,total_rate,pay_rate,disc_price,rate_code,orig_arr_date,orig_dep_date,arr_date,dep_date,day_length,room_qty,can_cancel_time,keep_date,flag,create_time,create_oprt,update_time,update_oprt,channel_source_type,external_id,brand_id,room_source_type,city_code,charged_rate,time_zone,inn_eng_name,room_type_eng_name,bk_last_name,bk_first_name,country_code,preference,currency,overtime_state,acc_state,concat_last_name,concat_first_name,channel_code,business_meb_id,business_meb_type,min_pay_rate,min_live_days,order_type,sale_type) values(#{orderCode},#{thirdOrderCode},#{innId},#{innName},#{chainId},#{roomTypeId},#{roomTypeName},#{thirdRoomtypeId},#{bkMebId},#{bkName},#{bkMobile},#{bkEmail},#{bkMebType},#{bkCardNo},#{bkPropertyId},#{bkProtypeId},#{contactName},#{contactPhone},#{contactEmail},#{guestsName},#{guestsNum},#{bkIp},#{supplierId},#{assureType},#{assureMebPoint},#{sourceType},#{innerRemarks},#{remarks},#{orderState},#{activityCode},#{sellerId},#{payState},#{canCancel},#{needInvoice},#{payType},#{origRate},#{totalRate},#{payRate},#{discPrice},#{rateCode},#{origArrDate},#{origDepDate},#{arrDate},#{depDate},#{dayLength},#{roomQty},#{canCancelTime},#{keepDate},#{flag},#{createTime},#{createOprt},#{updateTime},#{updateOprt},#{channelSourceType},#{externalId},#{brandId},#{roomSourceType},#{cityCode},#{chargedRate},#{timeZone},#{innEngName},#{roomTypeEngName},#{bkLastName},#{bkFirstName},#{countryCode},#{preference},#{currency},#{overtimeState},#{accState},#{concatLastName},#{concatFirstName},#{channelCode},#{businessMebId},#{businessMebType},#{minPayRate},#{minLiveDays},#{orderType},#{saleType})
+	</insert>
+
+	<delete id="deleteEntity">
+		delete from gs_order_inn where business_meb_id = #{businessMebId}
+	</delete>
+
+	<update id="updateEntity">
+		update gs_order_inn
+		<set>
+			<if test="orderCode != null">
+				order_code = #{orderCode},
+			</if>
+			<if test="thirdOrderCode != null">
+				third_order_code = #{thirdOrderCode},
+			</if>
+			<if test="innId != null">
+				inn_id = #{innId},
+			</if>
+			<if test="innName != null">
+				inn_name = #{innName},
+			</if>
+			<if test="chainId != null">
+				chain_id = #{chainId},
+			</if>
+			<if test="roomTypeId != null">
+				room_type_id = #{roomTypeId},
+			</if>
+			<if test="roomTypeName != null">
+				room_type_name = #{roomTypeName},
+			</if>
+			<if test="thirdRoomtypeId != null">
+				third_roomtype_id = #{thirdRoomtypeId},
+			</if>
+			<if test="bkMebId != null">
+				bk_meb_id = #{bkMebId},
+			</if>
+			<if test="bkName != null">
+				bk_name = #{bkName},
+			</if>
+			<if test="bkMobile != null">
+				bk_mobile = #{bkMobile},
+			</if>
+			<if test="bkEmail != null">
+				bk_email = #{bkEmail},
+			</if>
+			<if test="bkMebType != null">
+				bk_meb_type = #{bkMebType},
+			</if>
+			<if test="bkCardNo != null">
+				bk_card_no = #{bkCardNo},
+			</if>
+			<if test="bkPropertyId != null">
+				bk_property_id = #{bkPropertyId},
+			</if>
+			<if test="bkProtypeId != null">
+				bk_protype_id = #{bkProtypeId},
+			</if>
+			<if test="contactName != null">
+				contact_name = #{contactName},
+			</if>
+			<if test="contactPhone != null">
+				contact_phone = #{contactPhone},
+			</if>
+			<if test="contactEmail != null">
+				contact_email = #{contactEmail},
+			</if>
+			<if test="guestsName != null">
+				guests_name = #{guestsName},
+			</if>
+			<if test="guestsNum != null">
+				guests_num = #{guestsNum},
+			</if>
+			<if test="bkIp != null">
+				bk_ip = #{bkIp},
+			</if>
+			<if test="supplierId != null">
+				supplier_id = #{supplierId},
+			</if>
+			<if test="assureType != null">
+				assure_type = #{assureType},
+			</if>
+			<if test="assureMebPoint != null">
+				assure_meb_point = #{assureMebPoint},
+			</if>
+			<if test="sourceType != null">
+				source_type = #{sourceType},
+			</if>
+			<if test="innerRemarks != null">
+				inner_remarks = #{innerRemarks},
+			</if>
+			<if test="remarks != null">
+				remarks = #{remarks},
+			</if>
+			<if test="orderState != null">
+				order_state = #{orderState},
+			</if>
+			<if test="activityCode != null">
+				activity_code = #{activityCode},
+			</if>
+			<if test="sellerId != null">
+				seller_id = #{sellerId},
+			</if>
+			<if test="payState != null">
+				pay_state = #{payState},
+			</if>
+			<if test="canCancel != null">
+				can_cancel = #{canCancel},
+			</if>
+			<if test="needInvoice != null">
+				need_invoice = #{needInvoice},
+			</if>
+			<if test="payType != null">
+				pay_type = #{payType},
+			</if>
+			<if test="origRate != null">
+				orig_rate = #{origRate},
+			</if>
+			<if test="totalRate != null">
+				total_rate = #{totalRate},
+			</if>
+			<if test="payRate != null">
+				pay_rate = #{payRate},
+			</if>
+			<if test="discPrice != null">
+				disc_price = #{discPrice},
+			</if>
+			<if test="rateCode != null">
+				rate_code = #{rateCode},
+			</if>
+			<if test="origArrDate != null">
+				orig_arr_date = #{origArrDate},
+			</if>
+			<if test="origDepDate != null">
+				orig_dep_date = #{origDepDate},
+			</if>
+			<if test="arrDate != null">
+				arr_date = #{arrDate},
+			</if>
+			<if test="depDate != null">
+				dep_date = #{depDate},
+			</if>
+			<if test="dayLength != null">
+				day_length = #{dayLength},
+			</if>
+			<if test="roomQty != null">
+				room_qty = #{roomQty},
+			</if>
+			<if test="canCancelTime != null">
+				can_cancel_time = #{canCancelTime},
+			</if>
+			<if test="keepDate != null">
+				keep_date = #{keepDate},
+			</if>
+			<if test="flag != null">
+				flag = #{flag},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime},
+			</if>
+			<if test="createOprt != null">
+				create_oprt = #{createOprt},
+			</if>
+			<if test="updateTime != null">
+				update_time = #{updateTime},
+			</if>
+			<if test="updateOprt != null">
+				update_oprt = #{updateOprt},
+			</if>
+			<if test="channelSourceType != null">
+				channel_source_type = #{channelSourceType},
+			</if>
+			<if test="externalId != null">
+				external_id = #{externalId},
+			</if>
+			<if test="brandId != null">
+				brand_id = #{brandId},
+			</if>
+			<if test="roomSourceType != null">
+				room_source_type = #{roomSourceType},
+			</if>
+			<if test="cityCode != null">
+				city_code = #{cityCode},
+			</if>
+			<if test="chargedRate != null">
+				charged_rate = #{chargedRate},
+			</if>
+			<if test="timeZone != null">
+				time_zone = #{timeZone},
+			</if>
+			<if test="innEngName != null">
+				inn_eng_name = #{innEngName},
+			</if>
+			<if test="roomTypeEngName != null">
+				room_type_eng_name = #{roomTypeEngName},
+			</if>
+			<if test="bkLastName != null">
+				bk_last_name = #{bkLastName},
+			</if>
+			<if test="bkFirstName != null">
+				bk_first_name = #{bkFirstName},
+			</if>
+			<if test="countryCode != null">
+				country_code = #{countryCode},
+			</if>
+			<if test="preference != null">
+				preference = #{preference},
+			</if>
+			<if test="currency != null">
+				currency = #{currency},
+			</if>
+			<if test="overtimeState != null">
+				overtime_state = #{overtimeState},
+			</if>
+			<if test="accState != null">
+				acc_state = #{accState},
+			</if>
+			<if test="concatLastName != null">
+				concat_last_name = #{concatLastName},
+			</if>
+			<if test="concatFirstName != null">
+				concat_first_name = #{concatFirstName},
+			</if>
+			<if test="channelCode != null">
+				channel_code = #{channelCode},
+			</if>
+			<if test="businessMebId != null">
+				business_meb_id = #{businessMebId},
+			</if>
+			<if test="businessMebType != null">
+				business_meb_type = #{businessMebType},
+			</if>
+			<if test="minPayRate != null">
+				min_pay_rate = #{minPayRate},
+			</if>
+			<if test="minLiveDays != null">
+				min_live_days = #{minLiveDays},
+			</if>
+			<if test="orderType != null">
+				order_type = #{orderType},
+			</if>
+			<if test="saleType != null">
+				sale_type = #{saleType},
+			</if>
+		</set>
+		where business_meb_id = #{businessMebId}
+	</update>
+
+	<select id="findEntity" resultType="com.plateno.booking.model.GsOrderInn">
+		select
+		order_code AS orderCode,
+		third_order_code AS thirdOrderCode,
+		inn_id AS innId,
+		inn_name AS innName,
+		chain_id AS chainId,
+		room_type_id AS roomTypeId,
+		room_type_name AS roomTypeName,
+		third_roomtype_id AS thirdRoomtypeId,
+		bk_meb_id AS bkMebId,
+		bk_name AS bkName,
+		bk_mobile AS bkMobile,
+		bk_email AS bkEmail,
+		bk_meb_type AS bkMebType,
+		bk_card_no AS bkCardNo,
+		bk_property_id AS bkPropertyId,
+		bk_protype_id AS bkProtypeId,
+		contact_name AS contactName,
+		contact_phone AS contactPhone,
+		contact_email AS contactEmail,
+		guests_name AS guestsName,
+		guests_num AS guestsNum,
+		bk_ip AS bkIp,
+		supplier_id AS supplierId,
+		assure_type AS assureType,
+		assure_meb_point AS assureMebPoint,
+		source_type AS sourceType,
+		inner_remarks AS innerRemarks,
+		remarks AS remarks,
+		order_state AS orderState,
+		activity_code AS activityCode,
+		seller_id AS sellerId,
+		pay_state AS payState,
+		can_cancel AS canCancel,
+		need_invoice AS needInvoice,
+		pay_type AS payType,
+		orig_rate AS origRate,
+		total_rate AS totalRate,
+		pay_rate AS payRate,
+		disc_price AS discPrice,
+		rate_code AS rateCode,
+		orig_arr_date AS origArrDate,
+		orig_dep_date AS origDepDate,
+		arr_date AS arrDate,
+		dep_date AS depDate,
+		day_length AS dayLength,
+		room_qty AS roomQty,
+		can_cancel_time AS canCancelTime,
+		keep_date AS keepDate,
+		flag AS flag,
+		create_time AS createTime,
+		create_oprt AS createOprt,
+		update_time AS updateTime,
+		update_oprt AS updateOprt,
+		channel_source_type AS channelSourceType,
+		external_id AS externalId,
+		brand_id AS brandId,
+		room_source_type AS roomSourceType,
+		city_code AS cityCode,
+		charged_rate AS chargedRate,
+		time_zone AS timeZone,
+		inn_eng_name AS innEngName,
+		room_type_eng_name AS roomTypeEngName,
+		bk_last_name AS bkLastName,
+		bk_first_name AS bkFirstName,
+		country_code AS countryCode,
+		preference AS preference,
+		currency AS currency,
+		overtime_state AS overtimeState,
+		acc_state AS accState,
+		concat_last_name AS concatLastName,
+		concat_first_name AS concatFirstName,
+		channel_code AS channelCode,
+		business_meb_id AS businessMebId,
+		business_meb_type AS businessMebType,
+		min_pay_rate AS minPayRate,
+		min_live_days AS minLiveDays,
+		order_type AS orderType,
+		sale_type AS saleType
+		from gs_order_inn
+		where 1 = 1
+		<if test="orderCode != null">
+			and order_code = #{orderCode}
+		</if>
+		<if test="thirdOrderCode != null">
+			and third_order_code = #{thirdOrderCode}
+		</if>
+		<if test="innId != null">
+			and inn_id = #{innId}
+		</if>
+		<if test="innName != null">
+			and inn_name = #{innName}
+		</if>
+		<if test="chainId != null">
+			and chain_id = #{chainId}
+		</if>
+		<if test="roomTypeId != null">
+			and room_type_id = #{roomTypeId}
+		</if>
+		<if test="roomTypeName != null">
+			and room_type_name = #{roomTypeName}
+		</if>
+		<if test="thirdRoomtypeId != null">
+			and third_roomtype_id = #{thirdRoomtypeId}
+		</if>
+		<if test="bkMebId != null">
+			and bk_meb_id = #{bkMebId}
+		</if>
+		<if test="bkName != null">
+			and bk_name = #{bkName}
+		</if>
+		<if test="bkMobile != null">
+			and bk_mobile = #{bkMobile}
+		</if>
+		<if test="bkEmail != null">
+			and bk_email = #{bkEmail}
+		</if>
+		<if test="bkMebType != null">
+			and bk_meb_type = #{bkMebType}
+		</if>
+		<if test="bkCardNo != null">
+			and bk_card_no = #{bkCardNo}
+		</if>
+		<if test="bkPropertyId != null">
+			and bk_property_id = #{bkPropertyId}
+		</if>
+		<if test="bkProtypeId != null">
+			and bk_protype_id = #{bkProtypeId}
+		</if>
+		<if test="contactName != null">
+			and contact_name = #{contactName}
+		</if>
+		<if test="contactPhone != null">
+			and contact_phone = #{contactPhone}
+		</if>
+		<if test="contactEmail != null">
+			and contact_email = #{contactEmail}
+		</if>
+		<if test="guestsName != null">
+			and guests_name = #{guestsName}
+		</if>
+		<if test="guestsNum != null">
+			and guests_num = #{guestsNum}
+		</if>
+		<if test="bkIp != null">
+			and bk_ip = #{bkIp}
+		</if>
+		<if test="supplierId != null">
+			and supplier_id = #{supplierId}
+		</if>
+		<if test="assureType != null">
+			and assure_type = #{assureType}
+		</if>
+		<if test="assureMebPoint != null">
+			and assure_meb_point = #{assureMebPoint}
+		</if>
+		<if test="sourceType != null">
+			and source_type = #{sourceType}
+		</if>
+		<if test="innerRemarks != null">
+			and inner_remarks = #{innerRemarks}
+		</if>
+		<if test="remarks != null">
+			and remarks = #{remarks}
+		</if>
+		<if test="orderState != null">
+			and order_state = #{orderState}
+		</if>
+		<if test="activityCode != null">
+			and activity_code = #{activityCode}
+		</if>
+		<if test="sellerId != null">
+			and seller_id = #{sellerId}
+		</if>
+		<if test="payState != null">
+			and pay_state = #{payState}
+		</if>
+		<if test="canCancel != null">
+			and can_cancel = #{canCancel}
+		</if>
+		<if test="needInvoice != null">
+			and need_invoice = #{needInvoice}
+		</if>
+		<if test="payType != null">
+			and pay_type = #{payType}
+		</if>
+		<if test="origRate != null">
+			and orig_rate = #{origRate}
+		</if>
+		<if test="totalRate != null">
+			and total_rate = #{totalRate}
+		</if>
+		<if test="payRate != null">
+			and pay_rate = #{payRate}
+		</if>
+		<if test="discPrice != null">
+			and disc_price = #{discPrice}
+		</if>
+		<if test="rateCode != null">
+			and rate_code = #{rateCode}
+		</if>
+		<if test="origArrDate != null">
+			and orig_arr_date = #{origArrDate}
+		</if>
+		<if test="origDepDate != null">
+			and orig_dep_date = #{origDepDate}
+		</if>
+		<if test="arrDate != null">
+			and arr_date = #{arrDate}
+		</if>
+		<if test="depDate != null">
+			and dep_date = #{depDate}
+		</if>
+		<if test="dayLength != null">
+			and day_length = #{dayLength}
+		</if>
+		<if test="roomQty != null">
+			and room_qty = #{roomQty}
+		</if>
+		<if test="canCancelTime != null">
+			and can_cancel_time = #{canCancelTime}
+		</if>
+		<if test="keepDate != null">
+			and keep_date = #{keepDate}
+		</if>
+		<if test="flag != null">
+			and flag = #{flag}
+		</if>
+		<if test="createTime != null">
+			and create_time = #{createTime}
+		</if>
+		<if test="createOprt != null">
+			and create_oprt = #{createOprt}
+		</if>
+		<if test="updateTime != null">
+			and update_time = #{updateTime}
+		</if>
+		<if test="updateOprt != null">
+			and update_oprt = #{updateOprt}
+		</if>
+		<if test="channelSourceType != null">
+			and channel_source_type = #{channelSourceType}
+		</if>
+		<if test="externalId != null">
+			and external_id = #{externalId}
+		</if>
+		<if test="brandId != null">
+			and brand_id = #{brandId}
+		</if>
+		<if test="roomSourceType != null">
+			and room_source_type = #{roomSourceType}
+		</if>
+		<if test="cityCode != null">
+			and city_code = #{cityCode}
+		</if>
+		<if test="chargedRate != null">
+			and charged_rate = #{chargedRate}
+		</if>
+		<if test="timeZone != null">
+			and time_zone = #{timeZone}
+		</if>
+		<if test="innEngName != null">
+			and inn_eng_name = #{innEngName}
+		</if>
+		<if test="roomTypeEngName != null">
+			and room_type_eng_name = #{roomTypeEngName}
+		</if>
+		<if test="bkLastName != null">
+			and bk_last_name = #{bkLastName}
+		</if>
+		<if test="bkFirstName != null">
+			and bk_first_name = #{bkFirstName}
+		</if>
+		<if test="countryCode != null">
+			and country_code = #{countryCode}
+		</if>
+		<if test="preference != null">
+			and preference = #{preference}
+		</if>
+		<if test="currency != null">
+			and currency = #{currency}
+		</if>
+		<if test="overtimeState != null">
+			and overtime_state = #{overtimeState}
+		</if>
+		<if test="accState != null">
+			and acc_state = #{accState}
+		</if>
+		<if test="concatLastName != null">
+			and concat_last_name = #{concatLastName}
+		</if>
+		<if test="concatFirstName != null">
+			and concat_first_name = #{concatFirstName}
+		</if>
+		<if test="channelCode != null">
+			and channel_code = #{channelCode}
+		</if>
+		<if test="businessMebId != null">
+			and business_meb_id = #{businessMebId}
+		</if>
+		<if test="businessMebType != null">
+			and business_meb_type = #{businessMebType}
+		</if>
+		<if test="minPayRate != null">
+			and min_pay_rate = #{minPayRate}
+		</if>
+		<if test="minLiveDays != null">
+			and min_live_days = #{minLiveDays}
+		</if>
+		<if test="orderType != null">
+			and order_type = #{orderType}
+		</if>
+		<if test="saleType != null">
+			and sale_type = #{saleType}
+		</if>
+	</select>
+
+	<select id="findEntityList" resultType="com.plateno.booking.param.OrderInnParam">
+		select
+		order_code AS orderCode,
+		third_order_code AS thirdOrderCode,
+		inn_id AS innId,
+		inn_name AS innName,
+		chain_id AS chainId,
+		room_type_id AS roomTypeId,
+		room_type_name AS roomTypeName,
+		third_roomtype_id AS thirdRoomtypeId,
+		bk_meb_id AS bkMebId,
+		bk_name AS bkName,
+		bk_mobile AS bkMobile,
+		bk_email AS bkEmail,
+		bk_meb_type AS bkMebType,
+		bk_card_no AS bkCardNo,
+		bk_property_id AS bkPropertyId,
+		bk_protype_id AS bkProtypeId,
+		contact_name AS contactName,
+		contact_phone AS contactPhone,
+		contact_email AS contactEmail,
+		guests_name AS guestsName,
+		guests_num AS guestsNum,
+		bk_ip AS bkIp,
+		supplier_id AS supplierId,
+		assure_type AS assureType,
+		assure_meb_point AS assureMebPoint,
+		source_type AS sourceType,
+		inner_remarks AS innerRemarks,
+		remarks AS remarks,
+		order_state AS orderState,
+		activity_code AS activityCode,
+		seller_id AS sellerId,
+		pay_state AS payState,
+		can_cancel AS canCancel,
+		need_invoice AS needInvoice,
+		pay_type AS payType,
+		orig_rate AS origRate,
+		total_rate AS totalRate,
+		pay_rate AS payRate,
+		disc_price AS discPrice,
+		rate_code AS rateCode,
+		orig_arr_date AS origArrDate,
+		orig_dep_date AS origDepDate,
+		arr_date AS arrDate,
+		dep_date AS depDate,
+		day_length AS dayLength,
+		room_qty AS roomQty,
+		can_cancel_time AS canCancelTime,
+		keep_date AS keepDate,
+		flag AS flag,
+		create_time AS createTime,
+		create_oprt AS createOprt,
+		update_time AS updateTime,
+		update_oprt AS updateOprt,
+		channel_source_type AS channelSourceType,
+		external_id AS externalId,
+		brand_id AS brandId,
+		room_source_type AS roomSourceType,
+		city_code AS cityCode,
+		charged_rate AS chargedRate,
+		time_zone AS timeZone,
+		inn_eng_name AS innEngName,
+		room_type_eng_name AS roomTypeEngName,
+		bk_last_name AS bkLastName,
+		bk_first_name AS bkFirstName,
+		country_code AS countryCode,
+		preference AS preference,
+		currency AS currency,
+		overtime_state AS overtimeState,
+		acc_state AS accState,
+		concat_last_name AS concatLastName,
+		concat_first_name AS concatFirstName,
+		channel_code AS channelCode,
+		business_meb_id AS businessMebId,
+		business_meb_type AS businessMebType,
+		min_pay_rate AS minPayRate,
+		min_live_days AS minLiveDays,
+		order_type AS orderType,
+		sale_type AS saleType
+		from gs_order_inn
+		where 1 = 1
+		<if test="orderCode != null">
+			and order_code = #{orderCode}
+		</if>
+		<if test="thirdOrderCode != null">
+			and third_order_code = #{thirdOrderCode}
+		</if>
+		<if test="innId != null">
+			and inn_id = #{innId}
+		</if>
+		<if test="innName != null">
+			and inn_name = #{innName}
+		</if>
+		<if test="chainId != null">
+			and chain_id = #{chainId}
+		</if>
+		<if test="roomTypeId != null">
+			and room_type_id = #{roomTypeId}
+		</if>
+		<if test="roomTypeName != null">
+			and room_type_name = #{roomTypeName}
+		</if>
+		<if test="thirdRoomtypeId != null">
+			and third_roomtype_id = #{thirdRoomtypeId}
+		</if>
+		<if test="bkMebId != null">
+			and bk_meb_id = #{bkMebId}
+		</if>
+		<if test="bkName != null">
+			and bk_name = #{bkName}
+		</if>
+		<if test="bkMobile != null">
+			and bk_mobile = #{bkMobile}
+		</if>
+		<if test="bkEmail != null">
+			and bk_email = #{bkEmail}
+		</if>
+		<if test="bkMebType != null">
+			and bk_meb_type = #{bkMebType}
+		</if>
+		<if test="bkCardNo != null">
+			and bk_card_no = #{bkCardNo}
+		</if>
+		<if test="bkPropertyId != null">
+			and bk_property_id = #{bkPropertyId}
+		</if>
+		<if test="bkProtypeId != null">
+			and bk_protype_id = #{bkProtypeId}
+		</if>
+		<if test="contactName != null">
+			and contact_name = #{contactName}
+		</if>
+		<if test="contactPhone != null">
+			and contact_phone = #{contactPhone}
+		</if>
+		<if test="contactEmail != null">
+			and contact_email = #{contactEmail}
+		</if>
+		<if test="guestsName != null">
+			and guests_name = #{guestsName}
+		</if>
+		<if test="guestsNum != null">
+			and guests_num = #{guestsNum}
+		</if>
+		<if test="bkIp != null">
+			and bk_ip = #{bkIp}
+		</if>
+		<if test="supplierId != null">
+			and supplier_id = #{supplierId}
+		</if>
+		<if test="assureType != null">
+			and assure_type = #{assureType}
+		</if>
+		<if test="assureMebPoint != null">
+			and assure_meb_point = #{assureMebPoint}
+		</if>
+		<if test="sourceType != null">
+			and source_type = #{sourceType}
+		</if>
+		<if test="innerRemarks != null">
+			and inner_remarks = #{innerRemarks}
+		</if>
+		<if test="remarks != null">
+			and remarks = #{remarks}
+		</if>
+		<if test="orderState != null">
+			and order_state = #{orderState}
+		</if>
+		<if test="activityCode != null">
+			and activity_code = #{activityCode}
+		</if>
+		<if test="sellerId != null">
+			and seller_id = #{sellerId}
+		</if>
+		<if test="payState != null">
+			and pay_state = #{payState}
+		</if>
+		<if test="canCancel != null">
+			and can_cancel = #{canCancel}
+		</if>
+		<if test="needInvoice != null">
+			and need_invoice = #{needInvoice}
+		</if>
+		<if test="payType != null">
+			and pay_type = #{payType}
+		</if>
+		<if test="origRate != null">
+			and orig_rate = #{origRate}
+		</if>
+		<if test="totalRate != null">
+			and total_rate = #{totalRate}
+		</if>
+		<if test="payRate != null">
+			and pay_rate = #{payRate}
+		</if>
+		<if test="discPrice != null">
+			and disc_price = #{discPrice}
+		</if>
+		<if test="rateCode != null">
+			and rate_code = #{rateCode}
+		</if>
+		<if test="origArrDate != null">
+			and orig_arr_date = #{origArrDate}
+		</if>
+		<if test="origDepDate != null">
+			and orig_dep_date = #{origDepDate}
+		</if>
+		<if test="arrDate != null">
+			and arr_date = #{arrDate}
+		</if>
+		<if test="depDate != null">
+			and dep_date = #{depDate}
+		</if>
+		<if test="dayLength != null">
+			and day_length = #{dayLength}
+		</if>
+		<if test="roomQty != null">
+			and room_qty = #{roomQty}
+		</if>
+		<if test="canCancelTime != null">
+			and can_cancel_time = #{canCancelTime}
+		</if>
+		<if test="keepDate != null">
+			and keep_date = #{keepDate}
+		</if>
+		<if test="flag != null">
+			and flag = #{flag}
+		</if>
+		<if test="createTime != null">
+			and create_time = #{createTime}
+		</if>
+		<if test="createOprt != null">
+			and create_oprt = #{createOprt}
+		</if>
+		<if test="updateTime != null">
+			and update_time = #{updateTime}
+		</if>
+		<if test="updateOprt != null">
+			and update_oprt = #{updateOprt}
+		</if>
+		<if test="channelSourceType != null">
+			and channel_source_type = #{channelSourceType}
+		</if>
+		<if test="externalId != null">
+			and external_id = #{externalId}
+		</if>
+		<if test="brandId != null">
+			and brand_id = #{brandId}
+		</if>
+		<if test="roomSourceType != null">
+			and room_source_type = #{roomSourceType}
+		</if>
+		<if test="cityCode != null">
+			and city_code = #{cityCode}
+		</if>
+		<if test="chargedRate != null">
+			and charged_rate = #{chargedRate}
+		</if>
+		<if test="timeZone != null">
+			and time_zone = #{timeZone}
+		</if>
+		<if test="innEngName != null">
+			and inn_eng_name = #{innEngName}
+		</if>
+		<if test="roomTypeEngName != null">
+			and room_type_eng_name = #{roomTypeEngName}
+		</if>
+		<if test="bkLastName != null">
+			and bk_last_name = #{bkLastName}
+		</if>
+		<if test="bkFirstName != null">
+			and bk_first_name = #{bkFirstName}
+		</if>
+		<if test="countryCode != null">
+			and country_code = #{countryCode}
+		</if>
+		<if test="preference != null">
+			and preference = #{preference}
+		</if>
+		<if test="currency != null">
+			and currency = #{currency}
+		</if>
+		<if test="overtimeState != null">
+			and overtime_state = #{overtimeState}
+		</if>
+		<if test="accState != null">
+			and acc_state = #{accState}
+		</if>
+		<if test="concatLastName != null">
+			and concat_last_name = #{concatLastName}
+		</if>
+		<if test="concatFirstName != null">
+			and concat_first_name = #{concatFirstName}
+		</if>
+		<if test="channelCode != null">
+			and channel_code = #{channelCode}
+		</if>
+		<if test="businessMebId != null">
+			and business_meb_id = #{businessMebId}
+		</if>
+		<if test="businessMebType != null">
+			and business_meb_type = #{businessMebType}
+		</if>
+		<if test="minPayRate != null">
+			and min_pay_rate = #{minPayRate}
+		</if>
+		<if test="minLiveDays != null">
+			and min_live_days = #{minLiveDays}
+		</if>
+		<if test="orderType != null">
+			and order_type = #{orderType}
+		</if>
+		<if test="saleType != null">
+			and sale_type = #{saleType}
+		</if>
+<!-- 		<if test="firstItem != null and lastItem != null">
+			limit #{firstItem} , #{lastItem}
+		</if> -->
+	</select>
+	
+	<select id="getBkMebIdByOrderCode" resultType="com.plateno.booking.model.GsOrderInn">
+	    select bk_meb_id as bkMebId
+	    from gs_order_inn
+		where 1 = 1 
+		<if test="orderCode != null">
+			and order_code = #{orderCode}
+		</if>
+	</select>
+</mapper>

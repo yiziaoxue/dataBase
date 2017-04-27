@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Booking-Manager</title>
+<link rel="stylesheet" href="jquery/jquery-ui.css">
+<link rel="stylesheet" href="css/bootstrap.css" />
+<link rel="stylesheet" href="css/signin.css">
+<script src="jquery/jquery.js"></script>
+<script src="view/common.js"></script>
+<script src="jquery/jquery-ui.js"></script>
+<script src="js/bootstrap.js"></script>
+</head>
+<body>
+	<div id="header">
+		<div class="page-header">
+			<h1>
+				<b>预订服务运维系统 </b><small>连接有温度的旅行体验</small>
+			</h1>
+		</div>
+		<div class="panel-body">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<ul class="nav nav-tabs" id="booking-tabs">
+						<li class="active"><a href="#" onclick="changgeCenter(1)">订单数据</a></li>
+						<li><a href="#" onclick="changgeCenter(2)">账单数据</a></li>
+						<li><a href="#" onclick="changgeCenter(3)">变更日志</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="center">
+		<iframe id="bodyMain" src="order.html" frameborder=0 scrolling="yes" width="100%" target="_self"></iframe>
+	</div>
+	
+	<!-- 模态框（Modal） -->
+<!-- 	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-content">
+					<div class="signin">
+						<div class="signin-head">
+							<img src="images/test/head_120.png" alt="" class="img-circle">
+						</div>
+						<form class="form-signin" role="form">
+							<input type="text" class="form-control" placeholder="用户名"required autofocus /> 
+							<input type="password" class="form-control" placeholder="密码" required />
+							<button class="btn btn-lg btn-warning btn-block" type="submit">登录</button>
+						</form>
+					</div>
+			/.modal-content
+		</div>
+	</div> -->
+</body>
+<script src="manager.js"></script>
+</html>

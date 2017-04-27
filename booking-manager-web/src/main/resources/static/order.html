@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css/bootstrap-table.css" />
+<link rel="stylesheet" href="jquery/jquery-ui.css">
+<link rel="stylesheet" href="jquery/style.css">
+
+<script src="jquery/jquery.js"></script>
+<script src="jquery/jquery-ui.js"></script>
+<script src="js/bootstrap-table.js"></script>
+<script src="js/bootstrap-table-zh-CN.js"></script>
+</head>
+<body>
+<div style="border: 1px; width: 100%;">
+	<div class="panel-body" style="margin-bottom: 10px;margin-top: 10px;">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div style="float: left; border: 1px; margin-left: 10px;">
+					<label>订单编码</label>&nbsp;&nbsp;<input type="text" name="orderCode"
+						id="orderCode">
+				</div>
+				<div style="float: left; border: 1px; margin-left: 10px;">
+					<label>客户编码</label>&nbsp;&nbsp;<input type="text" name="memberId"
+						id="memberId">
+				</div>
+				<div
+					style="float: left; border: 1px; margin-left: 10px; margin-top: -5px;">
+					<button id="orderQuery" class="btn btn-primary" type="button">查询</button>
+				</div>
+				<div>
+					<table class="table table-hover" id="dataShow"></table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+<script src="order.js"></script>
+<script src="view/common.js"></script>
+</html>

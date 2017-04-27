@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plateno.booking.mapper.GsOrderInnAccountMapper">
+
+	<insert id="addEntity">
+		insert into gs_order_inn_account(account_code,order_code,item_code,item_type,amount,currency,merchant_no,pay_order_no,pay_channel,tran_desc,tran_time,third_item_id,remark,positive_flag,flag,ext1,ext2,ext3,create_time,create_oprt) values(#{accountCode},#{orderCode},#{itemCode},#{itemType},#{amount},#{currency},#{merchantNo},#{payOrderNo},#{payChannel},#{tranDesc},#{tranTime},#{thirdItemId},#{remark},#{positiveFlag},#{flag},#{ext1},#{ext2},#{ext3},#{createTime},#{createOprt})
+	</insert>
+
+	<delete id="deleteEntity">
+		delete from gs_order_inn_account where third_item_id = #{thirdItemId}
+	</delete>
+
+	<update id="updateEntity">
+		update gs_order_inn_account
+		<set>
+			<if test="accountCode != null">
+				account_code = #{accountCode},
+			</if>
+			<if test="orderCode != null">
+				order_code = #{orderCode},
+			</if>
+			<if test="itemCode != null">
+				item_code = #{itemCode},
+			</if>
+			<if test="itemType != null">
+				item_type = #{itemType},
+			</if>
+			<if test="amount != null">
+				amount = #{amount},
+			</if>
+			<if test="currency != null">
+				currency = #{currency},
+			</if>
+			<if test="merchantNo != null">
+				merchant_no = #{merchantNo},
+			</if>
+			<if test="payOrderNo != null">
+				pay_order_no = #{payOrderNo},
+			</if>
+			<if test="payChannel != null">
+				pay_channel = #{payChannel},
+			</if>
+			<if test="tranDesc != null">
+				tran_desc = #{tranDesc},
+			</if>
+			<if test="tranTime != null">
+				tran_time = #{tranTime},
+			</if>
+			<if test="thirdItemId != null">
+				third_item_id = #{thirdItemId},
+			</if>
+			<if test="remark != null">
+				remark = #{remark},
+			</if>
+			<if test="positiveFlag != null">
+				positive_flag = #{positiveFlag},
+			</if>
+			<if test="flag != null">
+				flag = #{flag},
+			</if>
+			<if test="ext1 != null">
+				ext1 = #{ext1},
+			</if>
+			<if test="ext2 != null">
+				ext2 = #{ext2},
+			</if>
+			<if test="ext3 != null">
+				ext3 = #{ext3},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime},
+			</if>
+			<if test="createOprt != null">
+				create_oprt = #{createOprt},
+			</if>
+		</set>
+		where third_item_id = #{thirdItemId}
+	</update>
+
+	<select id="findEntity" resultType="com.plateno.booking.model.GsOrderInnAccount">
+		select
+		account_code AS accountCode,
+		order_code AS orderCode,
+		item_code AS itemCode,
+		item_type AS itemType,
+		amount AS amount,
+		currency AS currency,
+		merchant_no AS merchantNo,
+		pay_order_no AS payOrderNo,
+		pay_channel AS payChannel,
+		tran_desc AS tranDesc,
+		tran_time AS tranTime,
+		third_item_id AS thirdItemId,
+		remark AS remark,
+		positive_flag AS positiveFlag,
+		flag AS flag,
+		ext1 AS ext1,
+		ext2 AS ext2,
+		ext3 AS ext3,
+		create_time AS createTime,
+		create_oprt AS createOprt
+		from gs_order_inn_account
+		where 1 = 1
+		<if test="accountCode != null">
+			and account_code = #{accountCode}
+		</if>
+		<if test="orderCode != null">
+			and order_code = #{orderCode}
+		</if>
+		<if test="itemCode != null">
+			and item_code = #{itemCode}
+		</if>
+		<if test="itemType != null">
+			and item_type = #{itemType}
+		</if>
+		<if test="amount != null">
+			and amount = #{amount}
+		</if>
+		<if test="currency != null">
+			and currency = #{currency}
+		</if>
+		<if test="merchantNo != null">
+			and merchant_no = #{merchantNo}
+		</if>
+		<if test="payOrderNo != null">
+			and pay_order_no = #{payOrderNo}
+		</if>
+		<if test="payChannel != null">
+			and pay_channel = #{payChannel}
+		</if>
+		<if test="tranDesc != null">
+			and tran_desc = #{tranDesc}
+		</if>
+		<if test="tranTime != null">
+			and tran_time = #{tranTime}
+		</if>
+		<if test="thirdItemId != null">
+			and third_item_id = #{thirdItemId}
+		</if>
+		<if test="remark != null">
+			and remark = #{remark}
+		</if>
+		<if test="positiveFlag != null">
+			and positive_flag = #{positiveFlag}
+		</if>
+		<if test="flag != null">
+			and flag = #{flag}
+		</if>
+		<if test="ext1 != null">
+			and ext1 = #{ext1}
+		</if>
+		<if test="ext2 != null">
+			and ext2 = #{ext2}
+		</if>
+		<if test="ext3 != null">
+			and ext3 = #{ext3}
+		</if>
+		<if test="createTime != null">
+			and create_time = #{createTime}
+		</if>
+		<if test="createOprt != null">
+			and create_oprt = #{createOprt}
+		</if>
+	</select>
+
+	<select id="findEntityList" resultType="com.plateno.booking.model.GsOrderInnAccount">
+		select
+		account_code AS accountCode,
+		order_code AS orderCode,
+		item_code AS itemCode,
+		item_type AS itemType,
+		amount AS amount,
+		currency AS currency,
+		merchant_no AS merchantNo,
+		pay_order_no AS payOrderNo,
+		pay_channel AS payChannel,
+		tran_desc AS tranDesc,
+		tran_time AS tranTime,
+		third_item_id AS thirdItemId,
+		remark AS remark,
+		positive_flag AS positiveFlag,
+		flag AS flag,
+		ext1 AS ext1,
+		ext2 AS ext2,
+		ext3 AS ext3,
+		create_time AS createTime,
+		create_oprt AS createOprt
+		from gs_order_inn_account
+		where 1 = 1
+		<if test="accountCode != null">
+			and account_code = #{accountCode}
+		</if>
+		<if test="orderCode != null">
+			and order_code = #{orderCode}
+		</if>
+		<if test="itemCode != null">
+			and item_code = #{itemCode}
+		</if>
+		<if test="itemType != null">
+			and item_type = #{itemType}
+		</if>
+		<if test="amount != null">
+			and amount = #{amount}
+		</if>
+		<if test="currency != null">
+			and currency = #{currency}
+		</if>
+		<if test="merchantNo != null">
+			and merchant_no = #{merchantNo}
+		</if>
+		<if test="payOrderNo != null">
+			and pay_order_no = #{payOrderNo}
+		</if>
+		<if test="payChannel != null">
+			and pay_channel = #{payChannel}
+		</if>
+		<if test="tranDesc != null">
+			and tran_desc = #{tranDesc}
+		</if>
+		<if test="tranTime != null">
+			and tran_time = #{tranTime}
+		</if>
+		<if test="thirdItemId != null">
+			and third_item_id = #{thirdItemId}
+		</if>
+		<if test="remark != null">
+			and remark = #{remark}
+		</if>
+		<if test="positiveFlag != null">
+			and positive_flag = #{positiveFlag}
+		</if>
+		<if test="flag != null">
+			and flag = #{flag}
+		</if>
+		<if test="ext1 != null">
+			and ext1 = #{ext1}
+		</if>
+		<if test="ext2 != null">
+			and ext2 = #{ext2}
+		</if>
+		<if test="ext3 != null">
+			and ext3 = #{ext3}
+		</if>
+		<if test="createTime != null">
+			and create_time = #{createTime}
+		</if>
+		<if test="createOprt != null">
+			and create_oprt = #{createOprt}
+		</if>
+	</select>
+
+
+</mapper>

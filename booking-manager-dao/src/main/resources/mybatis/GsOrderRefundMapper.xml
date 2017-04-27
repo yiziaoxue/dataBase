@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plateno.booking.mapper.GsOrderRefundMapper">
+
+	<insert id="addEntity">
+		insert into gs_order_refund(refund_order_no,order_code,refund_state,refund_mount,pay_order_no,merchant_no,create_time,create_oprt,update_time,update_oprt) values(#{refundOrderNo},#{orderCode},#{refundState},#{refundMount},#{payOrderNo},#{merchantNo},#{createTime},#{createOprt},#{updateTime},#{updateOprt})
+	</insert>
+
+	<delete id="deleteEntity">
+		delete from gs_order_refund	</delete>
+
+	<update id="updateEntity">
+		update gs_order_refund
+		<set>
+			<if test="refundOrderNo != null">
+				refund_order_no = #{refundOrderNo},
+			</if>
+			<if test="orderCode != null">
+				order_code = #{orderCode},
+			</if>
+			<if test="refundState != null">
+				refund_state = #{refundState},
+			</if>
+			<if test="refundMount != null">
+				refund_mount = #{refundMount},
+			</if>
+			<if test="payOrderNo != null">
+				pay_order_no = #{payOrderNo},
+			</if>
+			<if test="merchantNo != null">
+				merchant_no = #{merchantNo},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime},
+			</if>
+			<if test="createOprt != null">
+				create_oprt = #{createOprt},
+			</if>
+			<if test="updateTime != null">
+				update_time = #{updateTime},
+			</if>
+			<if test="updateOprt != null">
+				update_oprt = #{updateOprt},
+			</if>
+		</set>
+	</update>
+
+	<select id="findEntity" resultType="com.plateno.booking.model.GsOrderRefund">
+		select
+		refund_order_no AS refundOrderNo,
+		order_code AS orderCode,
+		refund_state AS refundState,
+		refund_mount AS refundMount,
+		pay_order_no AS payOrderNo,
+		merchant_no AS merchantNo,
+		create_time AS createTime,
+		create_oprt AS createOprt,
+		update_time AS updateTime,
+		update_oprt AS updateOprt
+		from gs_order_refund
+		where 1 = 1
+		<if test="refundOrderNo != null">
+			and refund_order_no = #{refundOrderNo}
+		</if>
+		<if test="orderCode != null">
+			and order_code = #{orderCode}
+		</if>
+		<if test="refundState != null">
+			and refund_state = #{refundState}
+		</if>
+		<if test="refundMount != null">
+			and refund_mount = #{refundMount}
+		</if>
+		<if test="payOrderNo != null">
+			and pay_order_no = #{payOrderNo}
+		</if>
+		<if test="merchantNo != null">
+			and merchant_no = #{merchantNo}
+		</if>
+		<if test="createTime != null">
+			and create_time = #{createTime}
+		</if>
+		<if test="createOprt != null">
+			and create_oprt = #{createOprt}
+		</if>
+		<if test="updateTime != null">
+			and update_time = #{updateTime}
+		</if>
+		<if test="updateOprt != null">
+			and update_oprt = #{updateOprt}
+		</if>
+	</select>
+
+	<select id="findEntityList" resultType="com.plateno.booking.model.GsOrderRefund">
+		select
+		refund_order_no AS refundOrderNo,
+		order_code AS orderCode,
+		refund_state AS refundState,
+		refund_mount AS refundMount,
+		pay_order_no AS payOrderNo,
+		merchant_no AS merchantNo,
+		create_time AS createTime,
+		create_oprt AS createOprt,
+		update_time AS updateTime,
+		update_oprt AS updateOprt
+		from gs_order_refund
+		where 1 = 1
+		<if test="refundOrderNo != null">
+			and refund_order_no = #{refundOrderNo}
+		</if>
+		<if test="orderCode != null">
+			and order_code = #{orderCode}
+		</if>
+		<if test="refundState != null">
+			and refund_state = #{refundState}
+		</if>
+		<if test="refundMount != null">
+			and refund_mount = #{refundMount}
+		</if>
+		<if test="payOrderNo != null">
+			and pay_order_no = #{payOrderNo}
+		</if>
+		<if test="merchantNo != null">
+			and merchant_no = #{merchantNo}
+		</if>
+		<if test="createTime != null">
+			and create_time = #{createTime}
+		</if>
+		<if test="createOprt != null">
+			and create_oprt = #{createOprt}
+		</if>
+		<if test="updateTime != null">
+			and update_time = #{updateTime}
+		</if>
+		<if test="updateOprt != null">
+			and update_oprt = #{updateOprt}
+		</if>
+	</select>
+
+
+</mapper>

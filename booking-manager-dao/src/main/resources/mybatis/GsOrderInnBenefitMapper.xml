@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plateno.booking.mapper.GsOrderInnBenefitMapper">
+
+	<insert id="addEntity">
+		insert into gs_order_inn_benefit(benefit_code,order_code,item_code,item_type,spot_amount,advance_amount,back_amount,currency,seller_id,end_of_day,tran_desc,third_item_id,inner_remark,remark,third_order_id,chain_id,meb_id,meb_type,used_begin_time,used_end_time,use_limit,inn_id_limit,brand_id_limit,city_id_limit,inn_id,add_source,channel,flag,external_id,ext,create_time,create_oprt) values(#{benefitCode},#{orderCode},#{itemCode},#{itemType},#{spotAmount},#{advanceAmount},#{backAmount},#{currency},#{sellerId},#{endOfDay},#{tranDesc},#{thirdItemId},#{innerRemark},#{remark},#{thirdOrderId},#{chainId},#{mebId},#{mebType},#{usedBeginTime},#{usedEndTime},#{useLimit},#{innIdLimit},#{brandIdLimit},#{cityIdLimit},#{innId},#{addSource},#{channel},#{flag},#{externalId},#{ext},#{createTime},#{createOprt})
+	</insert>
+
+	<delete id="deleteEntity">
+		delete from gs_order_inn_benefit where external_id = #{externalId}
+	</delete>
+
+	<update id="updateEntity">
+		update gs_order_inn_benefit
+		<set>
+			<if test="benefitCode != null">
+				benefit_code = #{benefitCode},
+			</if>
+			<if test="orderCode != null">
+				order_code = #{orderCode},
+			</if>
+			<if test="itemCode != null">
+				item_code = #{itemCode},
+			</if>
+			<if test="itemType != null">
+				item_type = #{itemType},
+			</if>
+			<if test="spotAmount != null">
+				spot_amount = #{spotAmount},
+			</if>
+			<if test="advanceAmount != null">
+				advance_amount = #{advanceAmount},
+			</if>
+			<if test="backAmount != null">
+				back_amount = #{backAmount},
+			</if>
+			<if test="currency != null">
+				currency = #{currency},
+			</if>
+			<if test="sellerId != null">
+				seller_id = #{sellerId},
+			</if>
+			<if test="endOfDay != null">
+				end_of_day = #{endOfDay},
+			</if>
+			<if test="tranDesc != null">
+				tran_desc = #{tranDesc},
+			</if>
+			<if test="thirdItemId != null">
+				third_item_id = #{thirdItemId},
+			</if>
+			<if test="innerRemark != null">
+				inner_remark = #{innerRemark},
+			</if>
+			<if test="remark != null">
+				remark = #{remark},
+			</if>
+			<if test="thirdOrderId != null">
+				third_order_id = #{thirdOrderId},
+			</if>
+			<if test="chainId != null">
+				chain_id = #{chainId},
+			</if>
+			<if test="mebId != null">
+				meb_id = #{mebId},
+			</if>
+			<if test="mebType != null">
+				meb_type = #{mebType},
+			</if>
+			<if test="usedBeginTime != null">
+				used_begin_time = #{usedBeginTime},
+			</if>
+			<if test="usedEndTime != null">
+				used_end_time = #{usedEndTime},
+			</if>
+			<if test="useLimit != null">
+				use_limit = #{useLimit},
+			</if>
+			<if test="innIdLimit != null">
+				inn_id_limit = #{innIdLimit},
+			</if>
+			<if test="brandIdLimit != null">
+				brand_id_limit = #{brandIdLimit},
+			</if>
+			<if test="cityIdLimit != null">
+				city_id_limit = #{cityIdLimit},
+			</if>
+			<if test="innId != null">
+				inn_id = #{innId},
+			</if>
+			<if test="addSource != null">
+				add_source = #{addSource},
+			</if>
+			<if test="channel != null">
+				channel = #{channel},
+			</if>
+			<if test="flag != null">
+				flag = #{flag},
+			</if>
+			<if test="externalId != null">
+				external_id = #{externalId},
+			</if>
+			<if test="ext != null">
+				ext = #{ext},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime},
+			</if>
+			<if test="createOprt != null">
+				create_oprt = #{createOprt},
+			</if>
+		</set>
+		where external_id = #{externalId}
+	</update>
+
+	<select id="findEntity" resultType="com.plateno.booking.model.GsOrderInnBenefit">
+		select
+		benefit_code AS benefitCode,
+		order_code AS orderCode,
+		item_code AS itemCode,
+		item_type AS itemType,
+		spot_amount AS spotAmount,
+		advance_amount AS advanceAmount,
+		back_amount AS backAmount,
+		currency AS currency,
+		seller_id AS sellerId,
+		end_of_day AS endOfDay,
+		tran_desc AS tranDesc,
+		third_item_id AS thirdItemId,
+		inner_remark AS innerRemark,
+		remark AS remark,
+		third_order_id AS thirdOrderId,
+		chain_id AS chainId,
+		meb_id AS mebId,
+		meb_type AS mebType,
+		used_begin_time AS usedBeginTime,
+		used_end_time AS usedEndTime,
+		use_limit AS useLimit,
+		inn_id_limit AS innIdLimit,
+		brand_id_limit AS brandIdLimit,
+		city_id_limit AS cityIdLimit,
+		inn_id AS innId,
+		add_source AS addSource,
+		channel AS channel,
+		flag AS flag,
+		external_id AS externalId,
+		ext AS ext,
+		create_time AS createTime,
+		create_oprt AS createOprt
+		from gs_order_inn_benefit
+		where 1 = 1
+		<if test="benefitCode != null">
+			and benefit_code = #{benefitCode}
+		</if>
+		<if test="orderCode != null">
+			and order_code = #{orderCode}
+		</if>
+		<if test="itemCode != null">
+			and item_code = #{itemCode}
+		</if>
+		<if test="itemType != null">
+			and item_type = #{itemType}
+		</if>
+		<if test="spotAmount != null">
+			and spot_amount = #{spotAmount}
+		</if>
+		<if test="advanceAmount != null">
+			and advance_amount = #{advanceAmount}
+		</if>
+		<if test="backAmount != null">
+			and back_amount = #{backAmount}
+		</if>
+		<if test="currency != null">
+			and currency = #{currency}
+		</if>
+		<if test="sellerId != null">
+			and seller_id = #{sellerId}
+		</if>
+		<if test="endOfDay != null">
+			and end_of_day = #{endOfDay}
+		</if>
+		<if test="tranDesc != null">
+			and tran_desc = #{tranDesc}
+		</if>
+		<if test="thirdItemId != null">
+			and third_item_id = #{thirdItemId}
+		</if>
+		<if test="innerRemark != null">
+			and inner_remark = #{innerRemark}
+		</if>
+		<if test="remark != null">
+			and remark = #{remark}
+		</if>
+		<if test="thirdOrderId != null">
+			and third_order_id = #{thirdOrderId}
+		</if>
+		<if test="chainId != null">
+			and chain_id = #{chainId}
+		</if>
+		<if test="mebId != null">
+			and meb_id = #{mebId}
+		</if>
+		<if test="mebType != null">
+			and meb_type = #{mebType}
+		</if>
+		<if test="usedBeginTime != null">
+			and used_begin_time = #{usedBeginTime}
+		</if>
+		<if test="usedEndTime != null">
+			and used_end_time = #{usedEndTime}
+		</if>
+		<if test="useLimit != null">
+			and use_limit = #{useLimit}
+		</if>
+		<if test="innIdLimit != null">
+			and inn_id_limit = #{innIdLimit}
+		</if>
+		<if test="brandIdLimit != null">
+			and brand_id_limit = #{brandIdLimit}
+		</if>
+		<if test="cityIdLimit != null">
+			and city_id_limit = #{cityIdLimit}
+		</if>
+		<if test="innId != null">
+			and inn_id = #{innId}
+		</if>
+		<if test="addSource != null">
+			and add_source = #{addSource}
+		</if>
+		<if test="channel != null">
+			and channel = #{channel}
+		</if>
+		<if test="flag != null">
+			and flag = #{flag}
+		</if>
+		<if test="externalId != null">
+			and external_id = #{externalId}
+		</if>
+		<if test="ext != null">
+			and ext = #{ext}
+		</if>
+		<if test="createTime != null">
+			and create_time = #{createTime}
+		</if>
+		<if test="createOprt != null">
+			and create_oprt = #{createOprt}
+		</if>
+	</select>
+
+	<select id="findEntityList" resultType="com.plateno.booking.model.GsOrderInnBenefit">
+		select
+		benefit_code AS benefitCode,
+		order_code AS orderCode,
+		item_code AS itemCode,
+		item_type AS itemType,
+		spot_amount AS spotAmount,
+		advance_amount AS advanceAmount,
+		back_amount AS backAmount,
+		currency AS currency,
+		seller_id AS sellerId,
+		end_of_day AS endOfDay,
+		tran_desc AS tranDesc,
+		third_item_id AS thirdItemId,
+		inner_remark AS innerRemark,
+		remark AS remark,
+		third_order_id AS thirdOrderId,
+		chain_id AS chainId,
+		meb_id AS mebId,
+		meb_type AS mebType,
+		used_begin_time AS usedBeginTime,
+		used_end_time AS usedEndTime,
+		use_limit AS useLimit,
+		inn_id_limit AS innIdLimit,
+		brand_id_limit AS brandIdLimit,
+		city_id_limit AS cityIdLimit,
+		inn_id AS innId,
+		add_source AS addSource,
+		channel AS channel,
+		flag AS flag,
+		external_id AS externalId,
+		ext AS ext,
+		create_time AS createTime,
+		create_oprt AS createOprt
+		from gs_order_inn_benefit
+		where 1 = 1
+		<if test="benefitCode != null">
+			and benefit_code = #{benefitCode}
+		</if>
+		<if test="orderCode != null">
+			and order_code = #{orderCode}
+		</if>
+		<if test="itemCode != null">
+			and item_code = #{itemCode}
+		</if>
+		<if test="itemType != null">
+			and item_type = #{itemType}
+		</if>
+		<if test="spotAmount != null">
+			and spot_amount = #{spotAmount}
+		</if>
+		<if test="advanceAmount != null">
+			and advance_amount = #{advanceAmount}
+		</if>
+		<if test="backAmount != null">
+			and back_amount = #{backAmount}
+		</if>
+		<if test="currency != null">
+			and currency = #{currency}
+		</if>
+		<if test="sellerId != null">
+			and seller_id = #{sellerId}
+		</if>
+		<if test="endOfDay != null">
+			and end_of_day = #{endOfDay}
+		</if>
+		<if test="tranDesc != null">
+			and tran_desc = #{tranDesc}
+		</if>
+		<if test="thirdItemId != null">
+			and third_item_id = #{thirdItemId}
+		</if>
+		<if test="innerRemark != null">
+			and inner_remark = #{innerRemark}
+		</if>
+		<if test="remark != null">
+			and remark = #{remark}
+		</if>
+		<if test="thirdOrderId != null">
+			and third_order_id = #{thirdOrderId}
+		</if>
+		<if test="chainId != null">
+			and chain_id = #{chainId}
+		</if>
+		<if test="mebId != null">
+			and meb_id = #{mebId}
+		</if>
+		<if test="mebType != null">
+			and meb_type = #{mebType}
+		</if>
+		<if test="usedBeginTime != null">
+			and used_begin_time = #{usedBeginTime}
+		</if>
+		<if test="usedEndTime != null">
+			and used_end_time = #{usedEndTime}
+		</if>
+		<if test="useLimit != null">
+			and use_limit = #{useLimit}
+		</if>
+		<if test="innIdLimit != null">
+			and inn_id_limit = #{innIdLimit}
+		</if>
+		<if test="brandIdLimit != null">
+			and brand_id_limit = #{brandIdLimit}
+		</if>
+		<if test="cityIdLimit != null">
+			and city_id_limit = #{cityIdLimit}
+		</if>
+		<if test="innId != null">
+			and inn_id = #{innId}
+		</if>
+		<if test="addSource != null">
+			and add_source = #{addSource}
+		</if>
+		<if test="channel != null">
+			and channel = #{channel}
+		</if>
+		<if test="flag != null">
+			and flag = #{flag}
+		</if>
+		<if test="externalId != null">
+			and external_id = #{externalId}
+		</if>
+		<if test="ext != null">
+			and ext = #{ext}
+		</if>
+		<if test="createTime != null">
+			and create_time = #{createTime}
+		</if>
+		<if test="createOprt != null">
+			and create_oprt = #{createOprt}
+		</if>
+	</select>
+
+
+</mapper>

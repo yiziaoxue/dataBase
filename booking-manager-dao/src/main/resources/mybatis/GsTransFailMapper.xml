@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plateno.booking.mapper.GsTransFailMapper">
+
+	<insert id="addEntity">
+		insert into gs_trans_fail(order_code,third_code,account_code,inn_id,chain_id,amount,end_of_day,call_state,call_count,third_item_id,assure_type,flag,remark,create_time,update_time) values(#{orderCode},#{thirdCode},#{accountCode},#{innId},#{chainId},#{amount},#{endOfDay},#{callState},#{callCount},#{thirdItemId},#{assureType},#{flag},#{remark},#{createTime},#{updateTime})
+	</insert>
+
+	<delete id="deleteEntity">
+		delete from gs_trans_fail where third_item_id = #{thirdItemId}
+	</delete>
+
+	<update id="updateEntity">
+		update gs_trans_fail
+		<set>
+			<if test="orderCode != null">
+				order_code = #{orderCode},
+			</if>
+			<if test="thirdCode != null">
+				third_code = #{thirdCode},
+			</if>
+			<if test="accountCode != null">
+				account_code = #{accountCode},
+			</if>
+			<if test="innId != null">
+				inn_id = #{innId},
+			</if>
+			<if test="chainId != null">
+				chain_id = #{chainId},
+			</if>
+			<if test="amount != null">
+				amount = #{amount},
+			</if>
+			<if test="endOfDay != null">
+				end_of_day = #{endOfDay},
+			</if>
+			<if test="callState != null">
+				call_state = #{callState},
+			</if>
+			<if test="callCount != null">
+				call_count = #{callCount},
+			</if>
+			<if test="thirdItemId != null">
+				third_item_id = #{thirdItemId},
+			</if>
+			<if test="assureType != null">
+				assure_type = #{assureType},
+			</if>
+			<if test="flag != null">
+				flag = #{flag},
+			</if>
+			<if test="remark != null">
+				remark = #{remark},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime},
+			</if>
+			<if test="updateTime != null">
+				update_time = #{updateTime},
+			</if>
+		</set>
+		where third_item_id = #{thirdItemId}
+	</update>
+
+	<select id="findEntity" resultType="com.plateno.booking.model.GsTransFail">
+		select
+		order_code AS orderCode,
+		third_code AS thirdCode,
+		account_code AS accountCode,
+		inn_id AS innId,
+		chain_id AS chainId,
+		amount AS amount,
+		end_of_day AS endOfDay,
+		call_state AS callState,
+		call_count AS callCount,
+		third_item_id AS thirdItemId,
+		assure_type AS assureType,
+		flag AS flag,
+		remark AS remark,
+		create_time AS createTime,
+		update_time AS updateTime
+		from gs_trans_fail
+		where 1 = 1
+		<if test="orderCode != null">
+			and order_code = #{orderCode}
+		</if>
+		<if test="thirdCode != null">
+			and third_code = #{thirdCode}
+		</if>
+		<if test="accountCode != null">
+			and account_code = #{accountCode}
+		</if>
+		<if test="innId != null">
+			and inn_id = #{innId}
+		</if>
+		<if test="chainId != null">
+			and chain_id = #{chainId}
+		</if>
+		<if test="amount != null">
+			and amount = #{amount}
+		</if>
+		<if test="endOfDay != null">
+			and end_of_day = #{endOfDay}
+		</if>
+		<if test="callState != null">
+			and call_state = #{callState}
+		</if>
+		<if test="callCount != null">
+			and call_count = #{callCount}
+		</if>
+		<if test="thirdItemId != null">
+			and third_item_id = #{thirdItemId}
+		</if>
+		<if test="assureType != null">
+			and assure_type = #{assureType}
+		</if>
+		<if test="flag != null">
+			and flag = #{flag}
+		</if>
+		<if test="remark != null">
+			and remark = #{remark}
+		</if>
+		<if test="createTime != null">
+			and create_time = #{createTime}
+		</if>
+		<if test="updateTime != null">
+			and update_time = #{updateTime}
+		</if>
+	</select>
+
+	<select id="findEntityList" resultType="com.plateno.booking.model.GsTransFail">
+		select
+		order_code AS orderCode,
+		third_code AS thirdCode,
+		account_code AS accountCode,
+		inn_id AS innId,
+		chain_id AS chainId,
+		amount AS amount,
+		end_of_day AS endOfDay,
+		call_state AS callState,
+		call_count AS callCount,
+		third_item_id AS thirdItemId,
+		assure_type AS assureType,
+		flag AS flag,
+		remark AS remark,
+		create_time AS createTime,
+		update_time AS updateTime
+		from gs_trans_fail
+		where 1 = 1
+		<if test="orderCode != null">
+			and order_code = #{orderCode}
+		</if>
+		<if test="thirdCode != null">
+			and third_code = #{thirdCode}
+		</if>
+		<if test="accountCode != null">
+			and account_code = #{accountCode}
+		</if>
+		<if test="innId != null">
+			and inn_id = #{innId}
+		</if>
+		<if test="chainId != null">
+			and chain_id = #{chainId}
+		</if>
+		<if test="amount != null">
+			and amount = #{amount}
+		</if>
+		<if test="endOfDay != null">
+			and end_of_day = #{endOfDay}
+		</if>
+		<if test="callState != null">
+			and call_state = #{callState}
+		</if>
+		<if test="callCount != null">
+			and call_count = #{callCount}
+		</if>
+		<if test="thirdItemId != null">
+			and third_item_id = #{thirdItemId}
+		</if>
+		<if test="assureType != null">
+			and assure_type = #{assureType}
+		</if>
+		<if test="flag != null">
+			and flag = #{flag}
+		</if>
+		<if test="remark != null">
+			and remark = #{remark}
+		</if>
+		<if test="createTime != null">
+			and create_time = #{createTime}
+		</if>
+		<if test="updateTime != null">
+			and update_time = #{updateTime}
+		</if>
+	</select>
+
+
+</mapper>

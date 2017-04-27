@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plateno.booking.mapper.GsOrderBackpayMapper">
+
+	<insert id="addEntity">
+		insert into gs_order_backpay(order_code,third_order_code,member_id,member_type,amount,orig_folio_num,real_folio_num,pay_channel,remark,call_state,call_count,flag,create_time,update_time) values(#{orderCode},#{thirdOrderCode},#{memberId},#{memberType},#{amount},#{origFolioNum},#{realFolioNum},#{payChannel},#{remark},#{callState},#{callCount},#{flag},#{createTime},#{updateTime})
+	</insert>
+
+	<delete id="deleteEntity">
+		delete from gs_order_backpay where member_id = #{memberId}
+	</delete>
+
+	<update id="updateEntity">
+		update gs_order_backpay
+		<set>
+			<if test="orderCode != null">
+				order_code = #{orderCode},
+			</if>
+			<if test="thirdOrderCode != null">
+				third_order_code = #{thirdOrderCode},
+			</if>
+			<if test="memberId != null">
+				member_id = #{memberId},
+			</if>
+			<if test="memberType != null">
+				member_type = #{memberType},
+			</if>
+			<if test="amount != null">
+				amount = #{amount},
+			</if>
+			<if test="origFolioNum != null">
+				orig_folio_num = #{origFolioNum},
+			</if>
+			<if test="realFolioNum != null">
+				real_folio_num = #{realFolioNum},
+			</if>
+			<if test="payChannel != null">
+				pay_channel = #{payChannel},
+			</if>
+			<if test="remark != null">
+				remark = #{remark},
+			</if>
+			<if test="callState != null">
+				call_state = #{callState},
+			</if>
+			<if test="callCount != null">
+				call_count = #{callCount},
+			</if>
+			<if test="flag != null">
+				flag = #{flag},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime},
+			</if>
+			<if test="updateTime != null">
+				update_time = #{updateTime},
+			</if>
+		</set>
+		where member_id = #{memberId}
+	</update>
+
+	<select id="findEntity" resultType="com.plateno.booking.model.GsOrderBackpay">
+		select
+		order_code AS orderCode,
+		third_order_code AS thirdOrderCode,
+		member_id AS memberId,
+		member_type AS memberType,
+		amount AS amount,
+		orig_folio_num AS origFolioNum,
+		real_folio_num AS realFolioNum,
+		pay_channel AS payChannel,
+		remark AS remark,
+		call_state AS callState,
+		call_count AS callCount,
+		flag AS flag,
+		create_time AS createTime,
+		update_time AS updateTime
+		from gs_order_backpay
+		where 1 = 1
+		<if test="orderCode != null">
+			and order_code = #{orderCode}
+		</if>
+		<if test="thirdOrderCode != null">
+			and third_order_code = #{thirdOrderCode}
+		</if>
+		<if test="memberId != null">
+			and member_id = #{memberId}
+		</if>
+		<if test="memberType != null">
+			and member_type = #{memberType}
+		</if>
+		<if test="amount != null">
+			and amount = #{amount}
+		</if>
+		<if test="origFolioNum != null">
+			and orig_folio_num = #{origFolioNum}
+		</if>
+		<if test="realFolioNum != null">
+			and real_folio_num = #{realFolioNum}
+		</if>
+		<if test="payChannel != null">
+			and pay_channel = #{payChannel}
+		</if>
+		<if test="remark != null">
+			and remark = #{remark}
+		</if>
+		<if test="callState != null">
+			and call_state = #{callState}
+		</if>
+		<if test="callCount != null">
+			and call_count = #{callCount}
+		</if>
+		<if test="flag != null">
+			and flag = #{flag}
+		</if>
+		<if test="createTime != null">
+			and create_time = #{createTime}
+		</if>
+		<if test="updateTime != null">
+			and update_time = #{updateTime}
+		</if>
+	</select>
+
+	<select id="findEntityList" resultType="com.plateno.booking.model.GsOrderBackpay">
+		select
+		order_code AS orderCode,
+		third_order_code AS thirdOrderCode,
+		member_id AS memberId,
+		member_type AS memberType,
+		amount AS amount,
+		orig_folio_num AS origFolioNum,
+		real_folio_num AS realFolioNum,
+		pay_channel AS payChannel,
+		remark AS remark,
+		call_state AS callState,
+		call_count AS callCount,
+		flag AS flag,
+		create_time AS createTime,
+		update_time AS updateTime
+		from gs_order_backpay
+		where 1 = 1
+		<if test="orderCode != null">
+			and order_code = #{orderCode}
+		</if>
+		<if test="thirdOrderCode != null">
+			and third_order_code = #{thirdOrderCode}
+		</if>
+		<if test="memberId != null">
+			and member_id = #{memberId}
+		</if>
+		<if test="memberType != null">
+			and member_type = #{memberType}
+		</if>
+		<if test="amount != null">
+			and amount = #{amount}
+		</if>
+		<if test="origFolioNum != null">
+			and orig_folio_num = #{origFolioNum}
+		</if>
+		<if test="realFolioNum != null">
+			and real_folio_num = #{realFolioNum}
+		</if>
+		<if test="payChannel != null">
+			and pay_channel = #{payChannel}
+		</if>
+		<if test="remark != null">
+			and remark = #{remark}
+		</if>
+		<if test="callState != null">
+			and call_state = #{callState}
+		</if>
+		<if test="callCount != null">
+			and call_count = #{callCount}
+		</if>
+		<if test="flag != null">
+			and flag = #{flag}
+		</if>
+		<if test="createTime != null">
+			and create_time = #{createTime}
+		</if>
+		<if test="updateTime != null">
+			and update_time = #{updateTime}
+		</if>
+	</select>
+
+
+</mapper>
